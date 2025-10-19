@@ -13,6 +13,42 @@
         a {
             color: orange;
         }
+        /* --- CSC/Joint Training callout --- */
+        .cta-banner {
+          max-width: 800px;
+          margin: 20px auto 10px auto;
+          padding: 16px 18px;
+          border-radius: 14px;
+          border: 1px solid #eee;
+          background: linear-gradient(180deg, #fff, #fafafa);
+          box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        .cta-banner h3 {
+          margin: 6px 0 8px 0;
+          text-align: center;
+          font-size: 1.15rem;
+        }
+        .cta-banner p {
+          margin: 6px 0;
+          line-height: 1.45;
+        }
+        .cta-banner ul {
+          margin: 6px 0 6px 18px;
+        }
+        .cta-banner li {
+          margin: 4px 0;
+        }
+        .badge {
+          display: inline-block;
+          font-size: 0.85rem;
+          padding: 2px 8px;
+          border-radius: 999px;
+          background: #fff3e0;
+          border: 1px solid #ffe0b2;
+          color: #b85c00;
+          margin: 0 6px;
+          vertical-align: middle;
+        }
     </style>
   </head>
 
@@ -28,18 +64,8 @@
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr style="padding:0px">
 
-              <!-- <div class="image-container">
-                <a href="imgs/htj.jpg"><img style="width:25%;max-width:25%;object-fit: cover; border-radius:50%; border: 5px double #666;" alt="profile photo" src="imgs/htj.jpg" class="hoverZoomLink"></a>
-              </div> -->
-
-              <!-- <td style="padding:2.5%;width:35%;max-width:28%">
-                <a href="imgs/htj.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius:50%" alt="profile photo" src="imgs/htj.jpg" class="hoverZoomLink"></a> -->
-                <!-- <a href="imgs/htj.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius:50%; border: 5px double #666;" alt="profile photo" src="imgs/htj.jpg" class="hoverZoomLink"></a> -->
-              <!-- </td> -->
-
-
               <td style="padding:2.5%;width:55%;vertical-align:middle">
-                <p class="name" style="text-align: center;margin: 8px"">
+                <p class="name" style="text-align: center;margin: 8px">
                   Tianjin Huang
                 </p>
                 <p style="margin: 3px">Hi, I'm an assistant professor in the Department of Computer Science at <a href="https://www.exeter.ac.uk/">University of Exeter</a>, and a long-term visiting researcher at <a href="https://www.tue.nl/en/">Eindhoven University of Technology (TU/e)</a>.
@@ -51,17 +77,35 @@
                     <li style="margin: 3px">AI for Science</li>
                   </ul>
                 </p>
-               <p style="margin:3px"> <a >I am open to collaborating with remote students and visitors (with or without research experience) who are interested in model compression, model editing, robustness, efficient training/tuning of foundation models and large language models, ai for science, etc.  </a> .^_^. </p>
+               <p style="margin:3px"> <a>I am open to collaborating with remote students and visitors (with or without research experience) who are interested in model compression, model editing, robustness, efficient training/tuning of foundation models and large language models, ai for science, etc.</a> .^_^. </p>
                 <p style="text-align: center">
-                  <a href="mailto:t.huang2@exeter.ac.uk"> <img src="imgs/email.png" style="width:5%;max-width:5%;vertical-align:middle;"></a> &nbsp;/&nbsp;
-                  <a href="https://scholar.google.com/citations?user=yFLmPsoAAAAJ&hl=nl"><img src="imgs/gs.png" style="width:5%;max-width:5%;vertical-align:middle;"></a></a> &nbsp;/&nbsp;
-                  <a href="https://x.com/Tianjinhuang1"><img src="imgs/twitter.png" style="width:7%;max-width:7%;vertical-align:middle;"></a></a> &nbsp;/&nbsp;
-                  <a href="https://github.com/TianjinYellow"><img src="imgs/github.png" style="width:5%;max-width:5%;vertical-align:middle;"></a></a> &nbsp;/&nbsp;
-                  <a href="https://www.linkedin.com/in/tianjin-huang-a99b811a5/"><img src="imgs/linkedin.webp" style="width:4%;max-width:4%;vertical-align:middle;"></a></a>
+                  <a href="mailto:t.huang2@exeter.ac.uk"> <img src="imgs/email.png" style="width:5%;max-width:5%;vertical-align:middle;" alt="email"></a> &nbsp;/&nbsp;
+                  <a href="https://scholar.google.com/citations?user=yFLmPsoAAAAJ&hl=nl"><img src="imgs/gs.png" style="width:5%;max-width:5%;vertical-align:middle;" alt="google scholar"></a> &nbsp;/&nbsp;
+                  <a href="https://x.com/Tianjinhuang1"><img src="imgs/twitter.png" style="width:7%;max-width:7%;vertical-align:middle;" alt="X/Twitter"></a> &nbsp;/&nbsp;
+                  <a href="https://github.com/TianjinYellow"><img src="imgs/github.png" style="width:5%;max-width:5%;vertical-align:middle;" alt="GitHub"></a> &nbsp;/&nbsp;
+                  <a href="https://www.linkedin.com/in/tianjin-huang-a99b811a5/"><img src="imgs/linkedin.webp" style="width:4%;max-width:4%;vertical-align:middle;" alt="LinkedIn"></a>
                 </p>
               </td>
             </tr>
           </tbody></table>
+
+          <!-- CSC & Joint-Training Callout -->
+          <div class="cta-banner" id="csc-phd">
+            <h3>Call for <span class="badge">CSC PhD</span> &amp; <span class="badge">Joint-Training (Visiting PhD)</span> Students</h3>
+            <p><strong>Topics:</strong> Efficient &amp; Trustworthy Foundation Models, Robust Remote Sensing (EO), Agentic AI &amp; Safety, AI for Science, Reliable/Green Training.</p>
+            <ul>
+              <li><strong>What we offer:</strong> Co-supervision with partners (e.g., TU/e), access to Exeter HPC (A100) &amp; national resources, supportive publication mentorship.</li>
+              <li><strong>Funding paths:</strong> China Scholarship Council (CSC) full PhD; Exeter–CSC joint program; 6–24 month joint-training/visiting PhD via CSC or home grants.</li>
+              <li><strong>Who should apply:</strong> Highly motivated students with solid ML/DS/PyTorch background; prior research or open-source contributions are a plus.</li>
+              <li><strong>How to apply:</strong> Email your <em>CV</em>, <em>transcripts</em>, a 1–2 page <em>statement of research interests</em>, and up to 2 representative works (papers/code).
+                Use the subject: <em>“CSC PhD / Joint Training – Your Name”</em>.
+              </li>
+              <li><strong>Contact:</strong> <a href="mailto:t.huang2@exeter.ac.uk?subject=CSC%20PhD%20%2F%20Joint%20Training%20%E2%80%93%20Your%20Name">t.huang2@exeter.ac.uk</a></li>
+            </ul>
+            <p>We welcome emails from prospective students. Feel free to introduce yourself and share how your interests align with our lab.</p>
+          </div>
+          <!-- /CSC & Joint-Training Callout -->
+
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
               <td style="padding:10px;width:100%;vertical-align:middle">
@@ -94,22 +138,21 @@ Sample Learners? </h3> </li>
               </td>
             </tr>
           </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody
+
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
               <td style="padding:10px;width:100%">
                 <h2><u>Selected Publications</u> <a href="https://scholar.google.com/citations?user=yFLmPsoAAAAJ&hl=nl"> (full list)</a></h2>
               </td>
             </tr>
           </tbody></table>
+
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-
-
 
 <td style="padding:10px;width:100%;vertical-align:middle">
 <p style="margin: 3px"><strong>You Can Have Better Graph Neural Networks by Not Training Weights at All: Finding Untrained GNNs Tickets</strong>
 <p style="color: #7c7a7a; margin: 3px;"><a1>Tianjin Huang</a1>, Tianlong Chen, Meng Fang, Vlado Menkovski, Jiaxu Zhao, Lu Yin, Yulong Pei, Decebal Constantin Mocanu, Zhangyang Wang, Mykola Pechenizkiy, Shiwei Liu</p>
-<p style="margin: 3px;"> <a >Learning on Graphs Conference (LoG 2022)</a> &nbsp;/&nbsp
+<p style="margin: 3px;"> <a>Learning on Graphs Conference (LoG 2022)</a> &nbsp;/&nbsp
   <a href="https://proceedings.mlr.press/v198/huang22a/huang22a.pdf"> Paper </a> &nbsp;/&nbsp
   <a href="https://github.com/TianjinYellow/UGTs-LoG"> Code </a> 
 </p>
@@ -118,7 +161,7 @@ Sample Learners? </h3> </li>
 
 <p style="margin: 3px"><strong>Are Large Kernels Better Teachers than Transformers for ConvNets?</strong>
 <p style="color: #7c7a7a; margin: 3px;"><a1>Tianjin Huang</a1>, Lu Yin, Zhenyu Zhang, Li Shen, Meng Fang, Mykola Pechenizkiy, Zhangyang Wang, Shiwei Liu</p>
-<p style="margin: 3px;"> <a >ICML 2023</a> &nbsp;/&nbsp
+<p style="margin: 3px;"> <a>ICML 2023</a> &nbsp;/&nbsp
   <a href="https://proceedings.mlr.press/v202/huang23o.html"> Paper </a> &nbsp;/&nbsp
   <a href="https://github.com/VITA-Group/SLaK"> Code </a> 
 </p>
@@ -126,7 +169,7 @@ Sample Learners? </h3> </li>
 
 <p style="margin: 3px"><strong>RT-GCN: Gaussian-based spatiotemporal graph convolutional network for robust traffic prediction</strong>
 <p style="color: #7c7a7a; margin: 3px;">Yutian Liu, Soora Rasouli, Melvin Wong, Tao Feng, <a1>Tianjin Huang*</a1></p>
-<p style="margin: 3px;"> <a >Information Fusion</a> &nbsp;/&nbsp
+<p style="margin: 3px;"> <a>Information Fusion</a> &nbsp;/&nbsp
   <a href="https://www.sciencedirect.com/science/article/pii/S1566253523003949"> Paper </a> &nbsp;/&nbsp
   <a href="https://github.com/TianjinYellow/Robust-TGCN"> Code </a>
 </p>
@@ -135,7 +178,7 @@ Sample Learners? </h3> </li>
 
 <p style="margin: 3px"><strong>Sparsity May Cry: Let Us Fail (Current) Sparse Neural Networks Together!</strong>
 <p style="color: #7c7a7a; margin: 3px;">Shiwei Liu, Tianlong Chen, Zhenyu Zhang, Xuxi Chen, <a1>Tianjin Huang</a1>, Ajay Jaiswal, Zhangyang Wang</p>
-<p style="margin: 3px;"> <a >ICLR 2023</a> &nbsp;/&nbsp
+<p style="margin: 3px;"> <a>ICLR 2023</a> &nbsp;/&nbsp
   <a href="https://arxiv.org/abs/2303.02141"> Paper </a> &nbsp;/&nbsp
     <a href="https://github.com/VITA-Group/SMC-Bench"> Code </a> 
 </p>
@@ -145,7 +188,7 @@ Sample Learners? </h3> </li>
   
 <p style="margin: 3px"><strong>Dynamic sparsity is channel-level sparsity learner</strong>
 <p style="color: #7c7a7a; margin: 3px;"> Lu Yin, Gen Li, Meng Fang, Li Shen, <a1>Tianjin Huang</a1>, Zhangyang Wang, Vlado Menkovski, Xiaolong Ma, Mykola Pechenizkiy, Shiwei Liu</p>
-<p style="margin: 3px;"> <a >NeurIPS 2023</a> &nbsp;/&nbsp
+<p style="margin: 3px;"> <a>NeurIPS 2023</a> &nbsp;/&nbsp
   <a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/d6d0e41e0b1ed38c76d13c9e417a8f1f-Abstract-Conference.html"> Paper </a> &nbsp;/&nbsp
   <a href="https://github.com/luuyin/chase"> Code </a> 
 </p>
@@ -153,7 +196,7 @@ Sample Learners? </h3> </li>
 
 <p style="margin: 3px"><strong>Enhancing Adversarial Training via Reweighting Optimization Trajectory</strong>
 <p style="color: #7c7a7a; margin: 3px;"> <a1>Tianjin Huang</a1>, Shiwei Liu, Tianlong Chen, Meng Fang, Li Shen, Vlaod Menkovski, Lu Yin, Yulong Pei, Mykola Pechenizkiy</p>
-<p style="margin: 3px;"> <a >ECML-PKDD 2023</a> &nbsp;/&nbsp
+<p style="margin: 3px;"> <a>ECML-PKDD 2023</a> &nbsp;/&nbsp
   <a href="https://link.springer.com/chapter/10.1007/978-3-031-43412-9_7"> Paper </a> &nbsp;/&nbsp
   <a href="https://github.com/TianjinYellow/WOT"> Code </a>
 </p>
@@ -162,14 +205,13 @@ Sample Learners? </h3> </li>
   
 <p style="margin: 3px"><strong>Hop-count based self-supervised anomaly detection on attributed networks</strong>
 <p style="color: #7c7a7a; margin: 3px;"><a1>Tianjin Huang</a1>, Yulong Pei, Vlado Menkovski, Mykola Pechenizkiy</p>
-<p style="margin: 3px;"> <a >ECML-PKDD 2022</a> &nbsp;/&nbsp
+<p style="margin: 3px;"> <a>ECML-PKDD 2022</a> &nbsp;/&nbsp
   <a href="https://link.springer.com/chapter/10.1007/978-3-031-26387-3_14"> Paper </a> &nbsp;/&nbsp
   <a href="https://github.com/TianjinYellow/GraphAnomalyDetection/tree/master"> Code </a> 
 </p>
 </p>
 
 </td>
-
 
 </tbody></table>          
 <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
@@ -183,7 +225,7 @@ Sample Learners? </h3> </li>
 <table width="100%" align="center" border="0" cellpadding="20">
 <tbody>
 <tr>
-<td style="padding:10px;width:20%;vertical-align:middle"><img src="imgs/exeter.png" style="width:50%;max-width:50%;object-fit: cover; border-radius:50%"></td>
+<td style="padding:10px;width:20%;vertical-align:middle"><img src="imgs/exeter.png" style="width:50%;max-width:50%;object-fit: cover; border-radius:50%" alt="Exeter logo"></td>
 <td width="45%" valign="center">
 <p style="margin: 3px"> <a href="https://www.exeter.ac.uk/"> University of Exeter </a></p>
 <p style="margin: 3px"> Assistant Professor, June 2024 -  </p>
@@ -192,7 +234,7 @@ Sample Learners? </h3> </li>
 </tr>
   
 <tr>
-<td style="padding:10px;width:20%;vertical-align:middle"><img src="imgs/aberdeen.jpg" style="width:36%;max-width:36%;object-fit: cover; border-radius:50%"></td>
+<td style="padding:10px;width:20%;vertical-align:middle"><img src="imgs/aberdeen.jpg" style="width:36%;max-width:36%;object-fit: cover; border-radius:50%" alt="Aberdeen logo"></td>
 <td width="45%" valign="center">
 <p style="margin: 3px"> <a href="https://www.abdn.ac.uk/"> University of Aberdeen</a> </p>
 <p style="margin: 3px"> Lecturer (Assistant Professor), Mar. 2024 - June 2024 </p>
@@ -201,7 +243,7 @@ Sample Learners? </h3> </li>
 </tr>
 
 <tr>
-<td style="padding:10px;width:20%;vertical-align:middle"><img src="imgs/tue.png" style="width:40%;max-width:40%;object-fit: cover; border-radius:50%"></td>
+<td style="padding:10px;width:20%;vertical-align:middle"><img src="imgs/tue.png" style="width:40%;max-width:40%;object-fit: cover; border-radius:50%" alt="TU/e logo"></td>
 <td width="45%" valign="center">
 <p style="margin: 3px"> <a href="https://www.tue.nl/en/">Eindhoven University of Technology</a> </p>
 <p style="margin: 3px"> Postdoctoral Fellow, Feb. 2023 - Feb. 2024 </p>
@@ -210,10 +252,8 @@ Sample Learners? </h3> </li>
 </td>
 </tr>
 </tbody>
+</table>
 
-
-
-</tbody></table>          
 <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 <tr>
 <td>
@@ -224,7 +264,6 @@ Sample Learners? </h3> </li>
 <table width="100%" align="center" border="0" cellpadding="20">
 <tbody>
 
-
 <p> 
 <ul>
   <li> Invited Conference Reviewer: NeurIPS, ICLR, ICML, ECCV, ICIP,  CPAL, ECML-PKDD, UAI, IDA</li>
@@ -233,11 +272,10 @@ Mobile Computing, ACM Transactions on Intelligent Systems and Technology</li>
 </ul>
 </p>
 
-<body>
 <div class="image-container">
 <a href="https://clustrmaps.com/site/1bztu" title="Visit tracker">
-<img src="//www.clustrmaps.com/map_v2.png?cl=e7ba97&w=300&t=n&d=dVfCo98OpAShAF2cXPZ_T_TC12JqGbH6NEm3MrBI93A&co=ffffff&ct=5f72e7&ct=f4c1a5" style="width:20%;max-width:20%"></a>
-</a></div>
-</body>
+<img src="//www.clustrmaps.com/map_v2.png?cl=e7ba97&w=300&t=n&d=dVfCo98OpAShAF2cXPZ_T_TC12JqGbH6NEm3MrBI93A&co=ffffff&ct=5f72e7&ct=f4c1a5" style="width:20%;max-width:20%" alt="visitor map"></a>
+</div>
 
+</body>
 </html>
