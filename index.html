@@ -8,26 +8,94 @@
     <link rel="shortcut icon" href="imgs/icon2.webp" />
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />
     <style>
-      a { color: orange; }
+      /* Global basics */
+      body {
+        margin: 0;
+        padding: 24px 12px 40px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: radial-gradient(120% 160% at 0% 0%, #fffaf0 0, #f5f5f7 40%, #eceff1 100%);
+        color: #222;
+      }
+
+      /* Links */
+      a {
+        color: #f97316; /* nicer orange */
+        text-decoration: none;
+        font-weight: 500;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* Main card container */
+      .main-card {
+        background: #ffffff;
+        border-radius: 24px;
+        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+        padding: 8px 18px 24px;
+      }
+
+      /* Name / title */
+      .name {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+      }
+
+      /* Section headings */
+      h2 {
+        font-size: 1.35rem;
+        margin: 18px 0 8px;
+        font-weight: 700;
+      }
+      h2 u {
+        text-decoration-thickness: 2px;
+        text-underline-offset: 5px;
+      }
+
+      /* Text and lists */
+      p {
+        line-height: 1.6;
+      }
+      ul {
+        margin-top: 8px;
+        margin-bottom: 8px;
+      }
+
+      /* Profile image */
+      .image-container {
+        text-align: center;
+      }
+      .image-container img {
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.25);
+      }
 
       /* --- CSC/Joint Training callout --- */
       .cta-banner {
         max-width: 800px;
         margin: 16px auto 8px auto;
         padding: 16px 18px;
-        border-radius: 14px;
+        border-radius: 18px;
         border: 1px solid #eee;
         background: linear-gradient(180deg, #fff, #fafafa);
-        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
       }
       .cta-banner h3 {
         margin: 6px 0 8px 0;
         text-align: center;
         font-size: 1.15rem;
       }
-      .cta-banner p { margin: 6px 0; line-height: 1.5; }
-      .cta-banner ul { margin: 6px 0 6px 18px; line-height: 1.5; }
-      .cta-banner li { margin: 4px 0; }
+      .cta-banner p {
+        margin: 6px 0;
+        line-height: 1.5;
+      }
+      .cta-banner ul {
+        margin: 6px 0 6px 18px;
+        line-height: 1.5;
+      }
+      .cta-banner li {
+        margin: 4px 0;
+      }
       .badge {
         display: inline-block;
         padding: 2px 8px;
@@ -36,8 +104,108 @@
         border: 1px solid #ffe0b2;
         color: #b85c00;
         vertical-align: middle;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
       }
-      .image-container { text-align: center; }
+
+      /* --- News --- */
+      .news-list {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+      }
+      .news-list li {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 10px;
+        padding: 6px 0;
+        border-bottom: 1px dashed #eee;
+      }
+      .news-list li:last-child {
+        border-bottom: none;
+      }
+      .news-date {
+        font-weight: 600;
+        color: #4b5563;
+        min-width: 95px;
+      }
+      .news-text {
+        flex: 1 1 auto;
+        font-size: 0.95rem;
+      }
+
+      /* --- Venue / conference highlights --- */
+      .venue-pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 2px 10px;
+        border-radius: 999px;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        background: #fff7ed;
+        border: 1px solid #fed7aa;
+        color: #9a3412;
+        vertical-align: middle;
+      }
+      .venue-pill.conf {
+        /* top-tier conferences */
+        background: #eff6ff;
+        border-color: #bfdbfe;
+        color: #1d4ed8;
+      }
+      .venue-pill.journal {
+        /* journals */
+        background: #ecfdf3;
+        border-color: #bbf7d0;
+        color: #166534;
+      }
+      .venue-pill.workshop {
+        /* workshops / competitions */
+        background: #fdf2f8;
+        border-color: #f9a8d4;
+        color: #9d174d;
+      }
+
+      /* --- Award / highlight tags --- */
+      .award-tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 2px 10px;
+        border-radius: 999px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+        color: #b91c1c;
+        margin-top: 2px;
+      }
+
+      /* Selected publications layout */
+      .pub-block {
+        margin-bottom: 10px;
+      }
+      .pub-block p {
+        margin: 2px 0;
+      }
+      .pub-title {
+        font-weight: 700;
+      }
+      .pub-authors {
+        color: #6b7280;
+        font-size: 0.9rem;
+      }
+      .pub-meta {
+        font-size: 0.9rem;
+      }
+
+      /* Services list */
+      #services ul {
+        margin-left: 18px;
+      }
     </style>
   </head>
 
@@ -55,52 +223,85 @@
     </div>
 
     <!-- Main width-limited container -->
-    <table style="width:100%;max-width:800px;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+    <table
+      class="main-card"
+      style="width:100%;max-width:800px;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;"
+    >
       <tbody>
         <tr>
           <td style="padding:0;">
             <!-- Intro block -->
-            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+            <table
+              style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;"
+            >
               <tbody>
                 <tr>
-                  <td style="padding:2.5%;width:55%;vertical-align:middle;">
-                    <p class="name" style="text-align:center;margin:8px">Tianjin Huang</p>
-                    <p style="margin:3px">
+                  <td style="padding:2.5%;width:100%;vertical-align:middle;">
+                    <p class="name" style="text-align:center;margin:8px;">Tianjin Huang</p>
+                    <p style="margin:3px;">
                       Hi, I'm an assistant professor in the Department of Computer Science at
-                      <a href="https://www.exeter.ac.uk/">University of Exeter</a>, and a long-term visiting researcher at
+                      <a href="https://www.exeter.ac.uk/">University of Exeter</a>, and a long-term
+                      visiting researcher at
                       <a href="https://www.tue.nl/en/">Eindhoven University of Technology (TU/e)</a>.
-                      My research focuses on efficient and reliable machine learning systems, specifically in the following topics:
+                      My research focuses on efficient and reliable machine learning systems,
+                      specifically in the following topics:
                     </p>
                     <ul>
-                      <li style="margin:3px">Model Efficiency</li>
-                      <li style="margin:3px">Model Editing</li>
-                      <li style="margin:3px">Trustworthy AI</li>
-                      <li style="margin:3px">AI for Science</li>
+                      <li style="margin:3px;">Model Efficiency</li>
+                      <li style="margin:3px;">Model Editing</li>
+                      <li style="margin:3px;">Trustworthy AI</li>
+                      <li style="margin:3px;">AI for Science</li>
                     </ul>
 
-                    <p style="margin:3px">
-                      <a>I am open to collaborating with remote students and visitors (with or without research experience) who are interested in model compression, model editing, robustness, efficient training/tuning of foundation models and large language models, AI for science, etc.</a> .^_^.
+                    <p style="margin:3px;">
+                      <a>
+                        I am open to collaborating with remote students and visitors (with or without
+                        research experience) who are interested in model compression, model editing,
+                        robustness, efficient training/tuning of foundation models and large language
+                        models, AI for science, etc.
+                      </a>
+                      .^_^.
                     </p>
 
-                    <p style="text-align:center">
+                    <p style="text-align:center;margin-top:12px;">
                       <a href="mailto:t.huang2@exeter.ac.uk">
-                        <img src="imgs/email.png" style="width:5%;max-width:5%;vertical-align:middle;" alt="email" />
+                        <img
+                          src="imgs/email.png"
+                          style="width:5%;max-width:5%;vertical-align:middle;"
+                          alt="email"
+                        />
                       </a>
                       &nbsp;/&nbsp;
                       <a href="https://scholar.google.com/citations?user=yFLmPsoAAAAJ&hl=nl">
-                        <img src="imgs/gs.png" style="width:5%;max-width:5%;vertical-align:middle;" alt="Google Scholar" />
+                        <img
+                          src="imgs/gs.png"
+                          style="width:5%;max-width:5%;vertical-align:middle;"
+                          alt="Google Scholar"
+                        />
                       </a>
                       &nbsp;/&nbsp;
                       <a href="https://x.com/Tianjinhuang1">
-                        <img src="imgs/twitter.png" style="width:7%;max-width:7%;vertical-align:middle;" alt="X/Twitter" />
+                        <img
+                          src="imgs/twitter.png"
+                          style="width:7%;max-width:7%;vertical-align:middle;"
+                          alt="X/Twitter"
+                        />
                       </a>
                       &nbsp;/&nbsp;
                       <a href="https://github.com/TianjinYellow">
-                        <img src="imgs/github.png" style="width:5%;max-width:5%;vertical-align:middle;" alt="GitHub" />
+                        <img
+                          src="imgs/github.png"
+                          style="width:5%;max-width:5%;vertical-align:middle;"
+                          alt="GitHub"
+                        />
                       </a>
                       &nbsp;/&nbsp;
                       <a href="https://www.linkedin.com/in/tianjin-huang-a99b811a5/">
-                        <img src="imgs/linkedin.webp" style="width:4%;max-width:4%;vertical-align:middle;" alt="LinkedIn" />
+                        <img
+                          src="imgs/linkedin.webp"
+                          style="width:4%;max-width:4%;vertical-align:middle;"
+                          alt="LinkedIn"
+                        />
                       </a>
                     </p>
                   </td>
@@ -108,156 +309,472 @@
               </tbody>
             </table>
 
-            <!-- CSC & Joint-Training Callout (inside the same TD, before News) -->
+            <!-- CSC & Joint-Training Callout -->
             <div class="cta-banner" id="csc-phd">
               <h3>
                 Call for <span class="badge">CSC PhD</span> &amp;
                 <span class="badge">Joint-Training (Visiting PhD)</span> Students
               </h3>
               <p>
-                <strong>Topics:</strong> Efficient &amp; Trustworthy Foundation Models, Robust Earth Observation (EO), Agentic AI &amp; Safety,
-                AI for Science, Reliable/Green Training.
+                <strong>Topics:</strong> Efficient &amp; Trustworthy Foundation Models, Robust Earth
+                Observation (EO), Agentic AI &amp; Safety, AI for Science, Reliable/Green Training.
               </p>
               <ul>
-                <li><strong>What we offer:</strong> Co-supervision with partners (e.g., UNC, ELLIS Institute Tübingen), access to Exeter HPC (A100), Isambard-AI (5000 H200) &amp; national resources, supportive publication mentorship.</li>
-                <li><strong>Funding paths:</strong> China Scholarship Council (CSC) full PhD; Exeter–CSC joint program; 6–24 month joint-training/visiting PhD via CSC or home grants.</li>
-                <li><strong>How to apply:</strong> Email your <em>CV</em>, <em>transcripts</em>.
-                  Use the subject: <em>“CSC PhD / Joint Training – Your Name”</em>.
+                <li>
+                  <strong>What we offer:</strong> Co-supervision with partners (e.g., UNC, ELLIS
+                  Institute Tübingen), access to Exeter HPC (A100), Isambard-AI (5000 H200) &amp;
+                  national resources, supportive publication mentorship.
                 </li>
-                <li><strong>Contact:</strong> <a href="mailto:t.huang2@exeter.ac.uk?subject=CSC%20PhD%20%2F%20Joint%20Training%20%E2%80%93%20Your%20Name">t.huang2@exeter.ac.uk</a></li>
+                <li>
+                  <strong>Funding paths:</strong> China Scholarship Council (CSC) full PhD; Exeter–CSC
+                  joint program; 6–24 month joint-training/visiting PhD via CSC or home grants.
+                </li>
+                <li>
+                  <strong>How to apply:</strong> Email your <em>CV</em>, <em>transcripts</em>. Use the
+                  subject: <em>“CSC PhD / Joint Training – Your Name”</em>.
+                </li>
+                <li>
+                  <strong>Contact:</strong>
+                  <a
+                    href="mailto:t.huang2@exeter.ac.uk?subject=CSC%20PhD%20%2F%20Joint%20Training%20%E2%80%93%20Your%20Name"
+                    >t.huang2@exeter.ac.uk</a
+                  >
+                </li>
               </ul>
               <p>We welcome emails from prospective students. Feel free to introduce yourself.</p>
             </div>
 
             <!-- News -->
-            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+            <table
+              style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;"
+            >
               <tbody>
                 <tr>
                   <td style="padding:10px;width:100%;vertical-align:middle;">
                     <h2><u>News</u></h2>
-                    <p>
-                      <ul>
-                        <li style="margin:3px"><h3><strong>[Nov. 2025]</strong> One paper accepted at AAAI 2026. TimeCAP: A Channel-Aware Pre-Training Framework for Multivariate Time Series Forecasting</h3></li>
-                        <li style="margin:3px">
-                          <h3>
-                            <strong>[Oct. 2025]</strong> 🔥 Happy to announce that I officially join the 
-                            <strong>ELLIS Society</strong> as ELLIS Member. 
-                            Thank you for my endorsers, collaborators, and students!
-                          </h3>
-                        </li>
-                        <li style="margin:3px"><h3><strong>[Oct. 2025]</strong>Happy to announce that I officially join the ELLIS Society as ELLIS Member. Thank you for my endorsers, collaborators, and students! </h3></li>
-                        <li style="margin:3px"><h3><strong>[Sep. 2025]</strong> One paper accepted at ACM WSDM 2025. SARC: Sentiment-Augmented Deep Role Clustering for Fake News Detection</h3></li>
-                        <li style="margin:3px"><h3><strong>[Sep. 2025]</strong> One paper accepted at NeurIPS 2025. <a href="https://arxiv.org/abs/2505.16793">REOBench</a></h3></li>
-                        <li style="margin:3px"><h3><strong>[May. 2025]</strong> EUSIPCO 2025 <a href="https://arxiv.org/abs/2504.12423">Benchmarking Audio Deepfake Detection Robustness</a> in Real-world Communication Scenarios.</h3></li>
-                        <li style="margin:3px"><h3><strong>[May. 2025]</strong> We release <a href="https://arxiv.org/abs/2505.16793">REOBench</a>: A benchmark for evaluating the robustness of Earth observation foundation models.</h3></li>
-                        <li style="margin:3px"><h3><strong>[May. 2025]</strong> One <a href="https://conferences.miccai.org/2025/en/default.asp">MICCAI'25</a> Early Accepted, LKA</h3></li>
-                        <li style="margin:3px"><h3><strong>[May. 2025]</strong> One <a href="https://icml.cc/">ICML'25</a> accepted, LIFT</h3></li>
-                        <li style="margin:3px"><h3><strong>[Mar. 2025]</strong> One paper accepted by Expert Systems with Applications: <a href="https://www.sciencedirect.com/science/article/pii/S095741742500822X">Traffic congestion predictor</a></h3></li>
-                        <li style="margin:3px"><h3><strong>[Mar. 2025]</strong> Two papers accepted at ICLR 2025 workshop SCOPE: (1) <a href="https://openreview.net/forum?id=P8RGSaUFOR">SPAM</a> (2) <a href="https://openreview.net/forum?id=Gk2pBIAMUl">StableSPAM</a></h3></li>
-                        <li style="margin:3px"><h3><strong>[Jan. 2025]</strong> Three ICLR 2025 papers: (1) <a href="https://arxiv.org/abs/2501.06842">SPAM</a> (2) <a href="https://arxiv.org/abs/2407.06483">Composable Interventions</a> (3) <a href="https://arxiv.org/pdf/2501.13273">Robust Fairness via Confusional Spectral Regularization</a></h3></li>
-                        <li style="margin:3px"><h3><strong>[Dec. 2024]</strong> Invited talk at <a href="http://www.bcs-sgai.org/ai2024/?section=workshops">SGAI</a>, University of Cambridge</h3></li>
-                        <li style="margin:3px"><h3><strong>[Dec. 2024]</strong> One <a href="https://aaai.org/conference/aaai/aaai-25/">AAAI'25</a> accepted: Visual prompting upgrades neural network sparsification</h3></li>
-                        <li style="margin:3px"><h3><strong>[July. 2024]</strong> One <a href="https://bmvc2024.org/">BMVC'24</a> accepted: Are Sparse Neural Networks Better Hard Sample Learners?</h3></li>
-                        <li style="margin:3px"><h3><strong>[June 2024]</strong> Co-organizing <a href="https://edge-llms-challenge.github.io/edge-llm-challenge.github.io/">NeurIPS 2024 Edge-Device LLM Competition</a></h3></li>
-                        <li style="margin:3px"><h3><strong>[March. 2024]</strong> <a href="https://openreview.net/pdf?id=quK3DN5kUO">ICLR'24 workshop</a> accepted: Composing Knowledge and Compression Interventions</h3></li>
-                        <li style="margin:3px"><h3><strong>[Oct. 2023]</strong> <a href="https://www.sciencedirect.com/science/article/pii/S1566253523003949">Information Fusion</a> accepted: Robust Spatiotemporal GCN</h3></li>
-                        <li style="margin:3px"><h3><strong>[Sep. 2023]</strong> <a href="https://complexnetworks.org/">Complex Networks 2024</a> accepted: Heterophily-Based GNN for Imbalanced Classification</h3></li>
-                        <li style="margin:3px"><h3><strong>[Sep. 2023]</strong> <a href="https://neurips.cc/">NeurIPS'23</a> accepted: Channel-DST</h3></li>
-                        <li style="margin:3px"><h3><strong>[Jun. 2023]</strong> <a href="https://link.springer.com/chapter/10.1007/978-3-031-43412-9_7">ECML'23</a> accepted: Enhancing AT via Refining Optimization Trajectories</h3></li>
-                        <li style="margin:3px"><h3><strong>[Apr. 2023]</strong> <a href="https://icml.cc/Conferences/2023">ICML'23</a> accepted: Larger Kernel Better Teachers than Transformers</h3></li>
-                        <li style="margin:3px"><h3><strong>[Jan. 2023]</strong> <a href="https://openreview.net/forum?id=J6F3lLg4Kdp">ICLR'23</a> Oral: Sparsity May Cry</h3></li>
-                        <li style="margin:3px"><h3><strong>[Nov. 2022]</strong> <a href="https://logconference.org/">LoG'22</a> Best Paper: Better GNN by Finding Graph Tickets</h3></li>
-                        <li style="margin:3px"><h3><strong>[Nov. 2022]</strong> <a href="https://aaai-23.aaai.org/">AAAI'23</a> accepted: Lottery Pools</h3></li>
-                        <li style="margin:3px"><h3><strong>[Jun. 2022]</strong> <a href="https://ecmlpkdd.org/2022/">ECML-PKDD'22</a> accepted: Hop-count Based Self-Supervised Anomaly Detection</h3></li>
-                      </ul>
-                    </p>
+                    <ul class="news-list">
+                      <li>
+                        <span class="news-date">[Nov. 2025]</span>
+                        <span class="news-text">
+                          One paper accepted at
+                          <span class="venue-pill conf">AAAI 2026</span>:
+                          <em
+                            >TimeCAP: A Channel-Aware Pre-Training Framework for Multivariate Time
+                            Series Forecasting</em
+                          >.
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[Oct. 2025]</span>
+                        <span class="news-text">
+                          🔥 Happy to announce that I officially join the
+                          <span class="venue-pill">ELLIS Society</span> as ELLIS Member. Thank you
+                          for my endorsers, collaborators, and students!
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[Sep. 2025]</span>
+                        <span class="news-text">
+                          One paper accepted at
+                          <span class="venue-pill conf">ACM WSDM 2025</span>:
+                          <em
+                            >SARC: Sentiment-Augmented Deep Role Clustering for Fake News
+                            Detection</em
+                          >.
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[Sep. 2025]</span>
+                        <span class="news-text">
+                          One paper accepted at
+                          <span class="venue-pill conf">NeurIPS 2025</span>:
+                          <a href="https://arxiv.org/abs/2505.16793">REOBench</a>.
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[May. 2025]</span>
+                        <span class="news-text">
+                          <span class="venue-pill conf">EUSIPCO 2025</span> paper:
+                          <a href="https://arxiv.org/abs/2504.12423"
+                            >Benchmarking Audio Deepfake Detection Robustness</a
+                          >
+                          in real-world communication scenarios.
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[May. 2025]</span>
+                        <span class="news-text">
+                          We release <a href="https://arxiv.org/abs/2505.16793">REOBench</a>: A
+                          benchmark for evaluating the robustness of Earth observation foundation
+                          models.
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[May. 2025]</span>
+                        <span class="news-text">
+                          One <span class="venue-pill conf">MICCAI 2025</span> early accepted
+                          paper: LKA.
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[May. 2025]</span>
+                        <span class="news-text">
+                          One <span class="venue-pill conf">ICML 2025</span> paper accepted: LIFT.
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[Mar. 2025]</span>
+                        <span class="news-text">
+                          One paper accepted by
+                          <span class="venue-pill journal">Expert Systems with Applications</span>:
+                          <a
+                            href="https://www.sciencedirect.com/science/article/pii/S095741742500822X"
+                            >Traffic congestion predictor</a
+                          >.
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[Mar. 2025]</span>
+                        <span class="news-text">
+                          Two papers accepted at
+                          <span class="venue-pill workshop">ICLR 2025 SCOPE Workshop</span>:
+                          <a href="https://openreview.net/forum?id=P8RGSaUFOR">SPAM</a> and
+                          <a href="https://openreview.net/forum?id=Gk2pBIAMUl">StableSPAM</a>.
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[Jan. 2025]</span>
+                        <span class="news-text">
+                          Three <span class="venue-pill conf">ICLR 2025</span> papers:
+                          <a href="https://arxiv.org/abs/2501.06842">SPAM</a>,
+                          <a href="https://arxiv.org/abs/2407.06483">Composable Interventions</a>,
+                          and
+                          <a href="https://arxiv.org/pdf/2501.13273"
+                            >Robust Fairness via Confusional Spectral Regularization</a
+                          >.
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[Dec. 2024]</span>
+                        <span class="news-text">
+                          Invited talk at
+                          <a href="http://www.bcs-sgai.org/ai2024/?section=workshops"
+                            >SGAI 2024</a
+                          >, University of Cambridge.
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[Dec. 2024]</span>
+                        <span class="news-text">
+                          One <span class="venue-pill conf">AAAI 2025</span> paper accepted:
+                          <em>Visual prompting upgrades neural network sparsification</em>.
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[Jul. 2024]</span>
+                        <span class="news-text">
+                          One <span class="venue-pill conf">BMVC 2024</span> paper accepted:
+                          <em>Are Sparse Neural Networks Better Hard Sample Learners?</em>
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[Jun. 2024]</span>
+                        <span class="news-text">
+                          Co-organizing
+                          <span class="venue-pill workshop">NeurIPS 2024 Competition</span>:
+                          <a
+                            href="https://edge-llms-challenge.github.io/edge-llm-challenge.github.io/"
+                            >Edge-Device LLM Challenge</a
+                          >.
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[Mar. 2024]</span>
+                        <span class="news-text">
+                          <a href="https://openreview.net/pdf?id=quK3DN5kUO"
+                            >ICLR 2024 Workshop</a
+                          >
+                          paper accepted: <em>Composing Knowledge and Compression Interventions</em>.
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[Oct. 2023]</span>
+                        <span class="news-text">
+                          <span class="venue-pill journal">Information Fusion</span> paper accepted:
+                          <em>Robust Spatiotemporal GCN</em>.
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[Sep. 2023]</span>
+                        <span class="news-text">
+                          <span class="venue-pill conf">Complex Networks 2024</span> paper accepted:
+                          <em>Heterophily-Based GNN for Imbalanced Classification</em>.
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[Sep. 2023]</span>
+                        <span class="news-text">
+                          <span class="venue-pill conf">NeurIPS 2023</span> paper accepted:
+                          <em>Channel-DST</em>.
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[Jun. 2023]</span>
+                        <span class="news-text">
+                          <span class="venue-pill conf">ECML 2023</span> paper accepted:
+                          <em>Enhancing AT via Refining Optimization Trajectories</em>.
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[Apr. 2023]</span>
+                        <span class="news-text">
+                          <span class="venue-pill conf">ICML 2023</span> paper accepted:
+                          <em>Larger Kernel Better Teachers than Transformers</em>.
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[Jan. 2023]</span>
+                        <span class="news-text">
+                          <span class="venue-pill conf">ICLR 2023</span> Oral:
+                          <em>Sparsity May Cry</em>.
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[Nov. 2022]</span>
+                        <span class="news-text">
+                          <span class="venue-pill conf">LoG 2022</span> Best Paper:
+                          <em>Better GNN by Finding Graph Tickets</em>.
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[Nov. 2022]</span>
+                        <span class="news-text">
+                          <span class="venue-pill conf">AAAI 2023</span> paper accepted:
+                          <em>Lottery Pools</em>.
+                        </span>
+                      </li>
+
+                      <li>
+                        <span class="news-date">[Jun. 2022]</span>
+                        <span class="news-text">
+                          <span class="venue-pill conf">ECML-PKDD 2022</span> paper accepted:
+                          <em>Hop-count Based Self-Supervised Anomaly Detection</em>.
+                        </span>
+                      </li>
+                    </ul>
                   </td>
                 </tr>
               </tbody>
             </table>
 
             <!-- Selected Publications -->
-            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+            <table
+              style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;"
+            >
               <tbody>
                 <tr>
                   <td style="padding:10px;width:100%;">
-                    <h2><u>Selected Publications</u> <a href="https://scholar.google.com/citations?user=yFLmPsoAAAAJ&hl=nl">(full list)</a></h2>
+                    <h2>
+                      <u>Selected Publications</u>
+                      <a href="https://scholar.google.com/citations?user=yFLmPsoAAAAJ&hl=nl"
+                        >(full list)</a
+                      >
+                    </h2>
                   </td>
                 </tr>
               </tbody>
             </table>
 
-            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+            <table
+              style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;"
+            >
               <tbody>
                 <tr>
                   <td style="padding:10px;width:100%;vertical-align:middle;">
-                    <p style="margin:3px;"><strong>You Can Have Better Graph Neural Networks by Not Training Weights at All: Finding Untrained GNNs Tickets</strong></p>
-                    <p style="color:#7c7a7a;margin:3px;">Tianjin Huang, Tianlong Chen, Meng Fang, Vlado Menkovski, Jiaxu Zhao, Lu Yin, Yulong Pei, Decebal Constantin Mocanu, Zhangyang Wang, Mykola Pechenizkiy, Shiwei Liu</p>
-                    <p style="margin:3px;">
-                      <a>Learning on Graphs Conference (LoG 2022)</a> &nbsp;/&nbsp;
-                      <a href="https://proceedings.mlr.press/v198/huang22a/huang22a.pdf">Paper</a> &nbsp;/&nbsp;
-                      <a href="https://github.com/TianjinYellow/UGTs-LoG">Code</a>
-                    </p>
-                    <p style="color:#f35757;margin:3px;font-weight:700;">Best Paper Award</p>
 
-                    <p style="margin:3px;"><strong>Are Large Kernels Better Teachers than Transformers for ConvNets?</strong></p>
-                    <p style="color:#7c7a7a;margin:3px;">Tianjin Huang, Lu Yin, Zhenyu Zhang, Li Shen, Meng Fang, Mykola Pechenizkiy, Zhangyang Wang, Shiwei Liu</p>
-                    <p style="margin:3px;">
-                      <a>ICML 2023</a> &nbsp;/&nbsp;
-                      <a href="https://proceedings.mlr.press/v202/huang23o.html">Paper</a> &nbsp;/&nbsp;
-                      <a href="https://github.com/VITA-Group/SLaK">Code</a>
-                    </p>
+                    <div class="pub-block">
+                      <p class="pub-title">
+                        You Can Have Better Graph Neural Networks by Not Training Weights at All:
+                        Finding Untrained GNNs Tickets
+                      </p>
+                      <p class="pub-authors">
+                        Tianjin Huang, Tianlong Chen, Meng Fang, Vlado Menkovski, Jiaxu Zhao, Lu
+                        Yin, Yulong Pei, Decebal Constantin Mocanu, Zhangyang Wang, Mykola
+                        Pechenizkiy, Shiwei Liu
+                      </p>
+                      <p class="pub-meta">
+                        <span class="venue-pill conf">LoG 2022</span>
+                        &nbsp;/&nbsp;
+                        <a href="https://proceedings.mlr.press/v198/huang22a/huang22a.pdf"
+                          >Paper</a
+                        >
+                        &nbsp;/&nbsp;
+                        <a href="https://github.com/TianjinYellow/UGTs-LoG">Code</a>
+                      </p>
+                      <p>
+                        <span class="award-tag">Best Paper Award</span>
+                      </p>
+                    </div>
 
-                    <p style="margin:3px;"><strong>RT-GCN: Gaussian-based spatiotemporal graph convolutional network for robust traffic prediction</strong></p>
-                    <p style="color:#7c7a7a;margin:3px;">Yutian Liu, Soora Rasouli, Melvin Wong, Tao Feng, <strong>Tianjin Huang*</strong></p>
-                    <p style="margin:3px;">
-                      <a>Information Fusion</a> &nbsp;/&nbsp;
-                      <a href="https://www.sciencedirect.com/science/article/pii/S1566253523003949">Paper</a> &nbsp;/&nbsp;
-                      <a href="https://github.com/TianjinYellow/Robust-TGCN">Code</a>
-                    </p>
-                    <p style="color:#f35757;margin:3px;font-weight:700;">IF = 18.6</p>
+                    <div class="pub-block">
+                      <p class="pub-title">
+                        Are Large Kernels Better Teachers than Transformers for ConvNets?
+                      </p>
+                      <p class="pub-authors">
+                        Tianjin Huang, Lu Yin, Zhenyu Zhang, Li Shen, Meng Fang, Mykola
+                        Pechenizkiy, Zhangyang Wang, Shiwei Liu
+                      </p>
+                      <p class="pub-meta">
+                        <span class="venue-pill conf">ICML 2023</span>
+                        &nbsp;/&nbsp;
+                        <a href="https://proceedings.mlr.press/v202/huang23o.html">Paper</a>
+                        &nbsp;/&nbsp;
+                        <a href="https://github.com/VITA-Group/SLaK">Code</a>
+                      </p>
+                    </div>
 
-                    <p style="margin:3px;"><strong>Sparsity May Cry: Let Us Fail (Current) Sparse Neural Networks Together!</strong></p>
-                    <p style="color:#7c7a7a;margin:3px;">Shiwei Liu, Tianlong Chen, Zhenyu Zhang, Xuxi Chen, Tianjin Huang, Ajay Jaiswal, Zhangyang Wang</p>
-                    <p style="margin:3px;">
-                      <a>ICLR 2023</a> &nbsp;/&nbsp;
-                      <a href="https://arxiv.org/abs/2303.02141">Paper</a> &nbsp;/&nbsp;
-                      <a href="https://github.com/VITA-Group/SMC-Bench">Code</a>
-                    </p>
-                    <p style="color:#f35757;margin:3px;font-weight:700;">Spotlight Presentation</p>
+                    <div class="pub-block">
+                      <p class="pub-title">
+                        RT-GCN: Gaussian-based spatiotemporal graph convolutional network for robust
+                        traffic prediction
+                      </p>
+                      <p class="pub-authors">
+                        Yutian Liu, Soora Rasouli, Melvin Wong, Tao Feng,
+                        <strong>Tianjin Huang*</strong>
+                      </p>
+                      <p class="pub-meta">
+                        <span class="venue-pill journal">Information Fusion</span>
+                        &nbsp;/&nbsp;
+                        <a
+                          href="https://www.sciencedirect.com/science/article/pii/S1566253523003949"
+                          >Paper</a
+                        >
+                        &nbsp;/&nbsp;
+                        <a href="https://github.com/TianjinYellow/Robust-TGCN">Code</a>
+                      </p>
+                      <p>
+                        <span class="award-tag">Impact Factor: 18.6</span>
+                      </p>
+                    </div>
 
-                    <p style="margin:3px;"><strong>Dynamic sparsity is channel-level sparsity learner</strong></p>
-                    <p style="color:#7c7a7a;margin:3px;">Lu Yin, Gen Li, Meng Fang, Li Shen, Tianjin Huang, Zhangyang Wang, Vlado Menkovski, Xiaolong Ma, Mykola Pechenizkiy, Shiwei Liu</p>
-                    <p style="margin:3px;">
-                      <a>NeurIPS 2023</a> &nbsp;/&nbsp;
-                      <a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/d6d0e41e0b1ed38c76d13c9e417a8f1f-Abstract-Conference.html">Paper</a> &nbsp;/&nbsp;
-                      <a href="https://github.com/luuyin/chase">Code</a>
-                    </p>
+                    <div class="pub-block">
+                      <p class="pub-title">
+                        Sparsity May Cry: Let Us Fail (Current) Sparse Neural Networks Together!
+                      </p>
+                      <p class="pub-authors">
+                        Shiwei Liu, Tianlong Chen, Zhenyu Zhang, Xuxi Chen, Tianjin Huang, Ajay
+                        Jaiswal, Zhangyang Wang
+                      </p>
+                      <p class="pub-meta">
+                        <span class="venue-pill conf">ICLR 2023</span>
+                        &nbsp;/&nbsp;
+                        <a href="https://arxiv.org/abs/2303.02141">Paper</a>
+                        &nbsp;/&nbsp;
+                        <a href="https://github.com/VITA-Group/SMC-Bench">Code</a>
+                      </p>
+                      <p>
+                        <span class="award-tag">Spotlight Presentation</span>
+                      </p>
+                    </div>
 
-                    <p style="margin:3px;"><strong>Enhancing Adversarial Training via Reweighting Optimization Trajectory</strong></p>
-                    <p style="color:#7c7a7a;margin:3px;">Tianjin Huang, Shiwei Liu, Tianlong Chen, Meng Fang, Li Shen, Vlaod Menkovski, Lu Yin, Yulong Pei, Mykola Pechenizkiy</p>
-                    <p style="margin:3px;">
-                      <a>ECML-PKDD 2023</a> &nbsp;/&nbsp;
-                      <a href="https://link.springer.com/chapter/10.1007/978-3-031-43412-9_7">Paper</a> &nbsp;/&nbsp;
-                      <a href="https://github.com/TianjinYellow/WOT">Code</a>
-                    </p>
+                    <div class="pub-block">
+                      <p class="pub-title">
+                        Dynamic sparsity is channel-level sparsity learner
+                      </p>
+                      <p class="pub-authors">
+                        Lu Yin, Gen Li, Meng Fang, Li Shen, Tianjin Huang, Zhangyang Wang, Vlado
+                        Menkovski, Xiaolong Ma, Mykola Pechenizkiy, Shiwei Liu
+                      </p>
+                      <p class="pub-meta">
+                        <span class="venue-pill conf">NeurIPS 2023</span>
+                        &nbsp;/&nbsp;
+                        <a
+                          href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/d6d0e41e0b1ed38c76d13c9e417a8f1f-Abstract-Conference.html"
+                          >Paper</a
+                        >
+                        &nbsp;/&nbsp;
+                        <a href="https://github.com/luuyin/chase">Code</a>
+                      </p>
+                    </div>
 
-                    <p style="margin:3px;"><strong>Hop-count based self-supervised anomaly detection on attributed networks</strong></p>
-                    <p style="color:#7c7a7a;margin:3px;">Tianjin Huang, Yulong Pei, Vlado Menkovski, Mykola Pechenizkiy</p>
-                    <p style="margin:3px;">
-                      <a>ECML-PKDD 2022</a> &nbsp;/&nbsp;
-                      <a href="https://link.springer.com/chapter/10.1007/978-3-031-26387-3_14">Paper</a> &nbsp;/&nbsp;
-                      <a href="https://github.com/TianjinYellow/GraphAnomalyDetection/tree/master">Code</a>
-                    </p>
+                    <div class="pub-block">
+                      <p class="pub-title">
+                        Enhancing Adversarial Training via Reweighting Optimization Trajectory
+                      </p>
+                      <p class="pub-authors">
+                        Tianjin Huang, Shiwei Liu, Tianlong Chen, Meng Fang, Li Shen, Vlaod
+                        Menkovski, Lu Yin, Yulong Pei, Mykola Pechenizkiy
+                      </p>
+                      <p class="pub-meta">
+                        <span class="venue-pill conf">ECML-PKDD 2023</span>
+                        &nbsp;/&nbsp;
+                        <a
+                          href="https://link.springer.com/chapter/10.1007/978-3-031-43412-9_7"
+                          >Paper</a
+                        >
+                        &nbsp;/&nbsp;
+                        <a href="https://github.com/TianjinYellow/WOT">Code</a>
+                      </p>
+                    </div>
+
+                    <div class="pub-block">
+                      <p class="pub-title">
+                        Hop-count based self-supervised anomaly detection on attributed networks
+                      </p>
+                      <p class="pub-authors">
+                        Tianjin Huang, Yulong Pei, Vlado Menkovski, Mykola Pechenizkiy
+                      </p>
+                      <p class="pub-meta">
+                        <span class="venue-pill conf">ECML-PKDD 2022</span>
+                        &nbsp;/&nbsp;
+                        <a
+                          href="https://link.springer.com/chapter/10.1007/978-3-031-26387-3_14"
+                          >Paper</a
+                        >
+                        &nbsp;/&nbsp;
+                        <a
+                          href="https://github.com/TianjinYellow/GraphAnomalyDetection/tree/master"
+                          >Code</a
+                        >
+                      </p>
+                    </div>
+
                   </td>
                 </tr>
               </tbody>
             </table>
 
             <!-- Work Experience -->
-            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+            <table
+              style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;"
+            >
               <tbody>
-                <tr><td><h2><u>Work Experience</u></h2></td></tr>
+                <tr>
+                  <td><h2><u>Work Experience</u></h2></td>
+                </tr>
               </tbody>
             </table>
 
@@ -265,10 +782,16 @@
               <tbody>
                 <tr>
                   <td style="padding:10px;width:20%;vertical-align:middle;">
-                    <img src="imgs/exeter.png" style="width:50%;max-width:50%;object-fit:cover;border-radius:50%;" alt="Exeter logo" />
+                    <img
+                      src="imgs/exeter.png"
+                      style="width:50%;max-width:50%;object-fit:cover;border-radius:50%;"
+                      alt="Exeter logo"
+                    />
                   </td>
                   <td width="45%" valign="center">
-                    <p style="margin:3px;"><a href="https://www.exeter.ac.uk/">University of Exeter</a></p>
+                    <p style="margin:3px;">
+                      <a href="https://www.exeter.ac.uk/">University of Exeter</a>
+                    </p>
                     <p style="margin:3px;">Assistant Professor, June 2024 –</p>
                     <p style="margin:3px;">Department of Computer Science</p>
                   </td>
@@ -276,42 +799,74 @@
 
                 <tr>
                   <td style="padding:10px;width:20%;vertical-align:middle;">
-                    <img src="imgs/aberdeen.jpg" style="width:36%;max-width:36%;object-fit:cover;border-radius:50%;" alt="Aberdeen logo" />
+                    <img
+                      src="imgs/aberdeen.jpg"
+                      style="width:36%;max-width:36%;object-fit:cover;border-radius:50%;"
+                      alt="Aberdeen logo"
+                    />
                   </td>
                   <td width="45%" valign="center">
-                    <p style="margin:3px;"><a href="https://www.abdn.ac.uk/">University of Aberdeen</a></p>
-                    <p style="margin:3px;">Lecturer (Assistant Professor), Mar. 2024 – June 2024</p>
-                    <p style="margin:3px;">The School of Natural and Computing Sciences</p>
+                    <p style="margin:3px;">
+                      <a href="https://www.abdn.ac.uk/">University of Aberdeen</a>
+                    </p>
+                    <p style="margin:3px;">
+                      Lecturer (Assistant Professor), Mar. 2024 – June 2024
+                    </p>
+                    <p style="margin:3px;">
+                      The School of Natural and Computing Sciences
+                    </p>
                   </td>
                 </tr>
 
                 <tr>
                   <td style="padding:10px;width:20%;vertical-align:middle;">
-                    <img src="imgs/tue.png" style="width:40%;max-width:40%;object-fit:cover;border-radius:50%;" alt="TU/e logo" />
+                    <img
+                      src="imgs/tue.png"
+                      style="width:40%;max-width:40%;object-fit:cover;border-radius:50%;"
+                      alt="TU/e logo"
+                    />
                   </td>
                   <td width="45%" valign="center">
-                    <p style="margin:3px;"><a href="https://www.tue.nl/en/">Eindhoven University of Technology</a></p>
+                    <p style="margin:3px;">
+                      <a href="https://www.tue.nl/en/">Eindhoven University of Technology</a>
+                    </p>
                     <p style="margin:3px;">Postdoctoral Fellow, Feb. 2023 – Feb. 2024</p>
-                    <p style="margin:3px;">Advisor: Professor <a href="https://scholar.google.nl/citations?user=F0uFT_kAAAAJ&hl=en">Mykola Pechenizkiy</a></p>
+                    <p style="margin:3px;">
+                      Advisor: Professor
+                      <a href="https://scholar.google.nl/citations?user=F0uFT_kAAAAJ&hl=en"
+                        >Mykola Pechenizkiy</a
+                      >
+                    </p>
                   </td>
                 </tr>
               </tbody>
             </table>
 
             <!-- Services -->
-            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+            <table
+              style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;"
+            >
               <tbody>
-                <tr><td><h2><u>Services</u></h2></td></tr>
+                <tr>
+                  <td><h2><u>Services</u></h2></td>
+                </tr>
               </tbody>
             </table>
 
-            <table width="100%" align="center" border="0" cellpadding="20">
+            <table id="services" width="100%" align="center" border="0" cellpadding="20">
               <tbody>
                 <tr>
                   <td>
                     <ul>
-                      <li>Invited Conference Reviewer: NeurIPS, ICLR, ICML, ECCV, ICIP, CPAL, ECML-PKDD, UAI, IDA</li>
-                      <li>Invited Journal Reviewer: IEEE Transactions on Industrial Informatics, Wireless Communications and Mobile Computing, ACM Transactions on Intelligent Systems and Technology</li>
+                      <li>
+                        Invited Conference Reviewer: NeurIPS, ICLR, ICML, ECCV, ICIP, CPAL,
+                        ECML-PKDD, UAI, IDA
+                      </li>
+                      <li>
+                        Invited Journal Reviewer: IEEE Transactions on Industrial Informatics,
+                        Wireless Communications and Mobile Computing, ACM Transactions on
+                        Intelligent Systems and Technology
+                      </li>
                     </ul>
                   </td>
                 </tr>
@@ -319,13 +874,15 @@
             </table>
 
             <!-- Visitor map -->
-            <div class="image-container" style="margin-bottom:24px;">
+            <div class="image-container" style="margin-bottom:24px;margin-top:8px;">
               <a href="https://clustrmaps.com/site/1bztu" title="Visit tracker">
-                <img src="//www.clustrmaps.com/map_v2.png?cl=e7ba97&w=300&t=n&d=dVfCo98OpAShAF2cXPZ_T_TC12JqGbH6NEm3MrBI93A&co=ffffff&ct=5f72e7&ct=f4c1a5"
-                     style="width:20%;max-width:20%;" alt="visitor map" />
+                <img
+                  src="//www.clustrmaps.com/map_v2.png?cl=e7ba97&w=300&t=n&d=dVfCo98OpAShAF2cXPZ_T_TC12JqGbH6NEm3MrBI93A&co=ffffff&ct=5f72e7&ct=f4c1a5"
+                  style="width:20%;max-width:20%;"
+                  alt="visitor map"
+                />
               </a>
             </div>
-
           </td>
         </tr>
       </tbody>
