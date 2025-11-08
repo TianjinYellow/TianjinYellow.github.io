@@ -8,18 +8,31 @@
     <link rel="shortcut icon" href="imgs/icon2.webp" />
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />
     <style>
+      :root {
+        --bg-gradient: radial-gradient(120% 160% at 0% 0%, #fffaf0 0, #f5f5f7 40%, #eceff1 100%);
+        --text-main: #111827;
+        --text-muted: #6b7280;
+        --border-subtle: #e5e7eb;
+        --accent: #f97316;
+        --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.12);
+      }
+
       /* Global basics */
       body {
         margin: 0;
-        padding: 24px 12px 40px;
+        padding: 32px 12px 48px;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: radial-gradient(120% 160% at 0% 0%, #fffaf0 0, #f5f5f7 40%, #eceff1 100%);
-        color: #222;
+        background: var(--bg-gradient);
+        color: var(--text-main);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 1.7;
       }
 
       /* Links */
       a {
-        color: #f97316; /* nicer orange */
+        color: var(--accent);
         text-decoration: none;
         font-weight: 500;
       }
@@ -31,7 +44,7 @@
       .main-card {
         background: #ffffff;
         border-radius: 24px;
-        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+        box-shadow: var(--shadow-soft);
         padding: 8px 18px 24px;
       }
 
@@ -45,7 +58,7 @@
       /* Section headings */
       h2 {
         font-size: 1.35rem;
-        margin: 18px 0 8px;
+        margin: 22px 0 10px;
         font-weight: 700;
       }
       h2 u {
@@ -55,39 +68,82 @@
 
       /* Text and lists */
       p {
-        line-height: 1.6;
+        line-height: 1.7;
+        margin: 4px 0;
       }
       ul {
-        margin-top: 8px;
-        margin-bottom: 8px;
+        margin-top: 6px;
+        margin-bottom: 6px;
+      }
+
+      .soft-highlight {
+        background: #fff7ed;
+        padding: 2px 6px;
+        border-radius: 999px;
+        font-size: 0.95rem;
       }
 
       /* Profile image */
       .image-container {
         text-align: center;
       }
-      .image-container img {
-        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.25);
+      .profile-photo {
+        width: 140px;
+        max-width: 32vw;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 5px double #666;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25);
+      }
+
+      /* Social icons */
+      .social-links {
+        text-align: center;
+        margin-top: 12px;
+      }
+      .social-links img {
+        vertical-align: middle;
+        margin: 0 4px;
+      }
+      .icon-email {
+        width: 24px;
+        max-width: 24px;
+      }
+      .icon-gs {
+        width: 24px;
+        max-width: 24px;
+      }
+      .icon-twitter {
+        width: 28px;
+        max-width: 28px;
+      }
+      .icon-github {
+        width: 24px;
+        max-width: 24px;
+      }
+      .icon-linkedin {
+        width: 22px;
+        max-width: 22px;
       }
 
       /* --- CSC/Joint Training callout --- */
       .cta-banner {
         max-width: 800px;
-        margin: 16px auto 8px auto;
-        padding: 16px 18px;
+        margin: 16px auto 4px auto;
+        padding: 18px 20px;
         border-radius: 18px;
-        border: 1px solid #eee;
-        background: linear-gradient(180deg, #fff, #fafafa);
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        border: 1px solid #f3e8ff;
+        background: linear-gradient(180deg, #ffffff, #faf5ff);
+        box-shadow: 0 6px 18px rgba(79, 70, 229, 0.1);
       }
       .cta-banner h3 {
-        margin: 6px 0 8px 0;
+        margin: 6px 0 10px 0;
         text-align: center;
         font-size: 1.15rem;
       }
       .cta-banner p {
         margin: 6px 0;
-        line-height: 1.5;
+        line-height: 1.6;
       }
       .cta-banner ul {
         margin: 6px 0 6px 18px;
@@ -100,9 +156,9 @@
         display: inline-block;
         padding: 2px 8px;
         border-radius: 999px;
-        background: #fff3e0;
-        border: 1px solid #ffe0b2;
-        color: #b85c00;
+        background: #eef2ff;
+        border: 1px solid #e0e7ff;
+        color: #4338ca;
         vertical-align: middle;
         font-size: 0.78rem;
         font-weight: 600;
@@ -121,7 +177,7 @@
         flex-wrap: wrap;
         gap: 6px 10px;
         padding: 6px 0;
-        border-bottom: 1px dashed #eee;
+        border-bottom: 1px dashed var(--border-subtle);
       }
       .news-list li:last-child {
         border-bottom: none;
@@ -169,6 +225,12 @@
         border-color: #f9a8d4;
         color: #9d174d;
       }
+      .venue-pill.org {
+        /* societies / memberships */
+        background: #f0fdf4;
+        border-color: #bbf7d0;
+        color: #15803d;
+      }
 
       /* --- Award / highlight tags --- */
       .award-tag {
@@ -186,7 +248,12 @@
 
       /* Selected publications layout */
       .pub-block {
-        margin-bottom: 10px;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+        border-bottom: 1px dashed #f3f4f6;
+      }
+      .pub-block:last-child {
+        border-bottom: none;
       }
       .pub-block p {
         margin: 2px 0;
@@ -195,7 +262,7 @@
         font-weight: 700;
       }
       .pub-authors {
-        color: #6b7280;
+        color: var(--text-muted);
         font-size: 0.9rem;
       }
       .pub-meta {
@@ -206,6 +273,25 @@
       #services ul {
         margin-left: 18px;
       }
+
+      /* Visitor map */
+      .visitor-map img {
+        width: 200px;
+        max-width: 40vw;
+      }
+
+      /* Responsive tweaks */
+      @media (min-width: 768px) {
+        body {
+          padding-top: 40px;
+        }
+        .name {
+          font-size: 2.2rem;
+        }
+        .cta-banner {
+          margin-top: 20px;
+        }
+      }
     </style>
   </head>
 
@@ -214,10 +300,9 @@
     <div class="image-container">
       <a href="imgs/htj.jpg">
         <img
-          style="width:15%;max-width:15%;object-fit:cover;border-radius:50%;border:5px double #666;"
           alt="profile photo"
           src="imgs/htj.jpg"
-          class="hoverZoomLink"
+          class="profile-photo hoverZoomLink"
         />
       </a>
     </div>
@@ -225,7 +310,7 @@
     <!-- Main width-limited container -->
     <table
       class="main-card"
-      style="width:100%;max-width:800px;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;"
+      style="width:100%;max-width:880px;border:0;border-spacing:0;border-collapse:separate;margin:18px auto 0;"
     >
       <tbody>
         <tr>
@@ -254,20 +339,20 @@
                     </ul>
 
                     <p style="margin:3px;">
-                      <a>
+                      <span class="soft-highlight">
                         I am open to collaborating with remote students and visitors (with or without
                         research experience) who are interested in model compression, model editing,
                         robustness, efficient training/tuning of foundation models and large language
                         models, AI for science, etc.
-                      </a>
-                      .^_^.
+                      </span>
+                      &nbsp;^_^
                     </p>
 
-                    <p style="text-align:center;margin-top:12px;">
+                    <p class="social-links">
                       <a href="mailto:t.huang2@exeter.ac.uk">
                         <img
                           src="imgs/email.png"
-                          style="width:5%;max-width:5%;vertical-align:middle;"
+                          class="icon-email"
                           alt="email"
                         />
                       </a>
@@ -275,7 +360,7 @@
                       <a href="https://scholar.google.com/citations?user=yFLmPsoAAAAJ&hl=nl">
                         <img
                           src="imgs/gs.png"
-                          style="width:5%;max-width:5%;vertical-align:middle;"
+                          class="icon-gs"
                           alt="Google Scholar"
                         />
                       </a>
@@ -283,7 +368,7 @@
                       <a href="https://x.com/Tianjinhuang1">
                         <img
                           src="imgs/twitter.png"
-                          style="width:7%;max-width:7%;vertical-align:middle;"
+                          class="icon-twitter"
                           alt="X/Twitter"
                         />
                       </a>
@@ -291,7 +376,7 @@
                       <a href="https://github.com/TianjinYellow">
                         <img
                           src="imgs/github.png"
-                          style="width:5%;max-width:5%;vertical-align:middle;"
+                          class="icon-github"
                           alt="GitHub"
                         />
                       </a>
@@ -299,7 +384,7 @@
                       <a href="https://www.linkedin.com/in/tianjin-huang-a99b811a5/">
                         <img
                           src="imgs/linkedin.webp"
-                          style="width:4%;max-width:4%;vertical-align:middle;"
+                          class="icon-linkedin"
                           alt="LinkedIn"
                         />
                       </a>
@@ -369,7 +454,7 @@
                         <span class="news-date">[Oct. 2025]</span>
                         <span class="news-text">
                           🔥 Happy to announce that I officially join the
-                          <span class="venue-pill">ELLIS Society</span> as ELLIS Member. Thank you
+                          <span class="venue-pill org">ELLIS Society</span> as ELLIS Member. Thank you
                           for my endorsers, collaborators, and students!
                         </span>
                       </li>
@@ -418,8 +503,8 @@
                       <li>
                         <span class="news-date">[May. 2025]</span>
                         <span class="news-text">
-                          One <span class="venue-pill conf">MICCAI 2025</span> early accepted
-                          paper: LKA.
+                          One <span class="venue-pill conf">MICCAI 2025</span> early accepted paper:
+                          LKA.
                         </span>
                       </li>
 
@@ -469,9 +554,10 @@
                         <span class="news-date">[Dec. 2024]</span>
                         <span class="news-text">
                           Invited talk at
+                          <span class="venue-pill conf">SGAI 2024</span>,
                           <a href="http://www.bcs-sgai.org/ai2024/?section=workshops"
-                            >SGAI 2024</a
-                          >, University of Cambridge.
+                            >University of Cambridge</a
+                          >.
                         </span>
                       </li>
 
@@ -506,10 +592,10 @@
                       <li>
                         <span class="news-date">[Mar. 2024]</span>
                         <span class="news-text">
+                          <span class="venue-pill workshop">ICLR 2024 Workshop</span> paper accepted:
                           <a href="https://openreview.net/pdf?id=quK3DN5kUO"
-                            >ICLR 2024 Workshop</a
-                          >
-                          paper accepted: <em>Composing Knowledge and Compression Interventions</em>.
+                            >Composing Knowledge and Compression Interventions</a
+                          >.
                         </span>
                       </li>
 
@@ -614,7 +700,6 @@
               <tbody>
                 <tr>
                   <td style="padding:10px;width:100%;vertical-align:middle;">
-
                     <div class="pub-block">
                       <p class="pub-title">
                         You Can Have Better Graph Neural Networks by Not Training Weights at All:
@@ -761,7 +846,6 @@
                         >
                       </p>
                     </div>
-
                   </td>
                 </tr>
               </tbody>
@@ -852,11 +936,10 @@
             </table>
 
             <!-- Visitor map -->
-            <div class="image-container" style="margin-bottom:24px;margin-top:8px;">
+            <div class="image-container visitor-map" style="margin-bottom:24px;margin-top:8px;">
               <a href="https://clustrmaps.com/site/1bztu" title="Visit tracker">
                 <img
                   src="//www.clustrmaps.com/map_v2.png?cl=e7ba97&w=300&t=n&d=dVfCo98OpAShAF2cXPZ_T_TC12JqGbH6NEm3MrBI93A&co=ffffff&ct=5f72e7&ct=f4c1a5"
-                  style="width:20%;max-width:20%;"
                   alt="visitor map"
                 />
               </a>
