@@ -254,31 +254,17 @@
         color: #15803d;
       }
 
-      /* --- Conference summary pills (NeurIPS 2025×3 style) --- */
-      .venue-summary {
-        margin: 4px 0 8px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 4px;
-      }
+      /* --- Count pill shown at start of each news line --- */
       .venue-count-pill {
         display: inline-flex;
         align-items: center;
-        padding: 2px 10px 2px 8px;
+        padding: 2px 10px;
         border-radius: 999px;
         border: 1px solid #bbf7d0;
         background: #f0fdf4;
         font-size: 0.78rem;
         font-weight: 600;
         color: #0f172a;
-      }
-      .venue-count-pill::before {
-        content: "";
-        width: 6px;
-        height: 16px;
-        border-radius: 999px;
-        background: #22c55e;
-        margin-right: 6px;
       }
 
       /* --- Award / highlight tags --- */
@@ -487,9 +473,6 @@
                   <td style="padding:10px;width:100%;vertical-align:middle;">
                     <h2><u>News</u></h2>
 
-                    <!-- Conference summary pills (auto-generated) -->
-                    <div class="venue-summary" id="venue-summary"></div>
-
                     <ul class="news-list" id="news-list">
                       <li data-venue="AAAI 2026" data-venue-count="1">
                         <span class="news-date">[Nov. 2025]</span>
@@ -510,7 +493,7 @@
                         </span>
                       </li>
 
-                      <li data-venue="WSDM 2025" data-venue-count="1">
+                      <li data-venue="ACM WSDM 2025" data-venue-count="1">
                         <span class="news-date">[Sep. 2025]</span>
                         <span class="news-text">
                           <span class="venue-pill conf">ACM WSDM 2025</span>
@@ -1017,39 +1000,44 @@
       </tbody>
     </table>
 
-    <!-- JS: news toggle + conference summary pills -->
+    <!-- JS: per-line venue count pill + news toggle -->
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const MAX_VISIBLE = 8;
         const list = document.getElementById('news-list');
         const toggleBtn = document.getElementById('news-toggle');
-        const venueSummary = document.getElementById('venue-summary');
-
         if (!list) return;
 
         const items = Array.from(list.querySelectorAll('li'));
 
-        /* ----- build venue summary pills from data-venue + data-venue-count ----- */
-        if (venueSummary) {
-          const venueCounts = {};
+        /* ----- insert per-line count pill ----- */
+        items.forEach(li => {
+          const venue = li.getAttribute('data-venue');
+          if (!venue) return;
 
-          items.forEach(li => {
-            const key = li.getAttribute('data-venue');
-            if (!key) return;
-            const count = parseInt(li.getAttribute('data-venue-count') || '1', 10);
-            if (!Number.isFinite(count)) return;
-            venueCounts[key] = (venueCounts[key] || 0) + count;
-          });
+          let count = parseInt(li.getAttribute('data-venue-count') || '1', 10);
+          if (!Number.isFinite(count) || count < 1) count = 1;
 
-          Object.entries(venueCounts)
-            .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-            .forEach(([venue, count]) => {
-              const pill = document.createElement('span');
-              pill.className = 'venue-count-pill';
-              pill.textContent = venue + '×' + count;
-              venueSummary.appendChild(pill);
-            });
-        }
+          const textSpan = li.querySelector('.news-text');
+          if (!textSpan) return;
+
+          // remove original short venue-pill (we'll replace it with the count pill)
+          const oldPill = textSpan.querySelector('.venue-pill');
+          if (oldPill) {
+            const next = oldPill.nextSibling;
+            oldPill.remove();
+            if (next && next.nodeType === Node.TEXT_NODE) {
+              next.textContent = next.textContent.replace(/^\s+/, '');
+            }
+          }
+
+          const pill = document.createElement('span');
+          pill.className = 'venue-count-pill';
+          pill.textContent = venue + '×' + count;
+
+          textSpan.insertBefore(pill, textSpan.firstChild);
+          textSpan.insertBefore(document.createTextNode(' '), pill.nextSibling);
+        });
 
         /* ----- news show-more / show-less toggle ----- */
         if (!toggleBtn) return;
@@ -1059,7 +1047,6 @@
           return;
         }
 
-        // hide older items
         items.slice(MAX_VISIBLE).forEach(li => li.classList.add('news-hidden'));
         toggleBtn.style.display = 'inline-flex';
 
