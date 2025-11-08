@@ -254,6 +254,33 @@
         color: #15803d;
       }
 
+      /* --- Conference summary pills (NeurIPS 2025×3 style) --- */
+      .venue-summary {
+        margin: 4px 0 8px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+      .venue-count-pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 2px 10px 2px 8px;
+        border-radius: 999px;
+        border: 1px solid #bbf7d0;
+        background: #f0fdf4;
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: #0f172a;
+      }
+      .venue-count-pill::before {
+        content: "";
+        width: 6px;
+        height: 16px;
+        border-radius: 999px;
+        background: #22c55e;
+        margin-right: 6px;
+      }
+
       /* --- Award / highlight tags --- */
       .award-tag {
         display: inline-flex;
@@ -459,8 +486,12 @@
                 <tr>
                   <td style="padding:10px;width:100%;vertical-align:middle;">
                     <h2><u>News</u></h2>
+
+                    <!-- Conference summary pills (auto-generated) -->
+                    <div class="venue-summary" id="venue-summary"></div>
+
                     <ul class="news-list" id="news-list">
-                      <li>
+                      <li data-venue="AAAI 2026" data-venue-count="1">
                         <span class="news-date">[Nov. 2025]</span>
                         <span class="news-text">
                           <span class="venue-pill conf">AAAI 2026</span>
@@ -479,7 +510,7 @@
                         </span>
                       </li>
 
-                      <li>
+                      <li data-venue="WSDM 2025" data-venue-count="1">
                         <span class="news-date">[Sep. 2025]</span>
                         <span class="news-text">
                           <span class="venue-pill conf">ACM WSDM 2025</span>
@@ -489,7 +520,7 @@
                         </span>
                       </li>
 
-                      <li>
+                      <li data-venue="NeurIPS 2025" data-venue-count="1">
                         <span class="news-date">[Sep. 2025]</span>
                         <span class="news-text">
                           <span class="venue-pill conf">NeurIPS 2025</span>
@@ -498,7 +529,7 @@
                         </span>
                       </li>
 
-                      <li>
+                      <li data-venue="EUSIPCO 2025" data-venue-count="1">
                         <span class="news-date">[May. 2025]</span>
                         <span class="news-text">
                           <span class="venue-pill conf">EUSIPCO 2025</span>
@@ -520,7 +551,7 @@
                         </span>
                       </li>
 
-                      <li>
+                      <li data-venue="MICCAI 2025" data-venue-count="1">
                         <span class="news-date">[May. 2025]</span>
                         <span class="news-text">
                           <span class="venue-pill conf">MICCAI 2025</span>
@@ -528,7 +559,7 @@
                         </span>
                       </li>
 
-                      <li>
+                      <li data-venue="ICML 2025" data-venue-count="1">
                         <span class="news-date">[May. 2025]</span>
                         <span class="news-text">
                           <span class="venue-pill conf">ICML 2025</span>
@@ -547,7 +578,7 @@
                         </span>
                       </li>
 
-                      <li>
+                      <li data-venue="ICLR 2025 SCOPE" data-venue-count="2">
                         <span class="news-date">[Mar. 2025]</span>
                         <span class="news-text">
                           <span class="venue-pill workshop">ICLR 2025 SCOPE Workshop</span>
@@ -557,7 +588,7 @@
                         </span>
                       </li>
 
-                      <li>
+                      <li data-venue="ICLR 2025" data-venue-count="3">
                         <span class="news-date">[Jan. 2025]</span>
                         <span class="news-text">
                           <span class="venue-pill conf">ICLR 2025</span>
@@ -582,7 +613,7 @@
                         </span>
                       </li>
 
-                      <li>
+                      <li data-venue="AAAI 2025" data-venue-count="1">
                         <span class="news-date">[Dec. 2024]</span>
                         <span class="news-text">
                           <span class="venue-pill conf">AAAI 2025</span>
@@ -591,7 +622,7 @@
                         </span>
                       </li>
 
-                      <li>
+                      <li data-venue="BMVC 2024" data-venue-count="1">
                         <span class="news-date">[Jul. 2024]</span>
                         <span class="news-text">
                           <span class="venue-pill conf">BMVC 2024</span>
@@ -611,7 +642,7 @@
                         </span>
                       </li>
 
-                      <li>
+                      <li data-venue="ICLR 2024 Workshop" data-venue-count="1">
                         <span class="news-date">[Mar. 2024]</span>
                         <span class="news-text">
                           <span class="venue-pill workshop">ICLR 2024 Workshop</span>
@@ -631,7 +662,7 @@
                         </span>
                       </li>
 
-                      <li>
+                      <li data-venue="Complex Networks 2024" data-venue-count="1">
                         <span class="news-date">[Sep. 2023]</span>
                         <span class="news-text">
                           <span class="venue-pill conf">Complex Networks 2024</span>
@@ -640,7 +671,7 @@
                         </span>
                       </li>
 
-                      <li>
+                      <li data-venue="NeurIPS 2023" data-venue-count="1">
                         <span class="news-date">[Sep. 2023]</span>
                         <span class="news-text">
                           <span class="venue-pill conf">NeurIPS 2023</span>
@@ -649,7 +680,7 @@
                         </span>
                       </li>
 
-                      <li>
+                      <li data-venue="ECML 2023" data-venue-count="1">
                         <span class="news-date">[Jun. 2023]</span>
                         <span class="news-text">
                           <span class="venue-pill conf">ECML 2023</span>
@@ -658,7 +689,7 @@
                         </span>
                       </li>
 
-                      <li>
+                      <li data-venue="ICML 2023" data-venue-count="1">
                         <span class="news-date">[Apr. 2023]</span>
                         <span class="news-text">
                           <span class="venue-pill conf">ICML 2023</span>
@@ -667,7 +698,7 @@
                         </span>
                       </li>
 
-                      <li>
+                      <li data-venue="ICLR 2023" data-venue-count="1">
                         <span class="news-date">[Jan. 2023]</span>
                         <span class="news-text">
                           <span class="venue-pill conf">ICLR 2023</span>
@@ -676,7 +707,7 @@
                         </span>
                       </li>
 
-                      <li>
+                      <li data-venue="LoG 2022" data-venue-count="1">
                         <span class="news-date">[Nov. 2022]</span>
                         <span class="news-text">
                           <span class="venue-pill conf">LoG 2022</span>
@@ -685,7 +716,7 @@
                         </span>
                       </li>
 
-                      <li>
+                      <li data-venue="AAAI 2023" data-venue-count="1">
                         <span class="news-date">[Nov. 2022]</span>
                         <span class="news-text">
                           <span class="venue-pill conf">AAAI 2023</span>
@@ -694,7 +725,7 @@
                         </span>
                       </li>
 
-                      <li>
+                      <li data-venue="ECML-PKDD 2022" data-venue-count="1">
                         <span class="news-date">[Jun. 2022]</span>
                         <span class="news-text">
                           <span class="venue-pill conf">ECML-PKDD 2022</span>
@@ -986,15 +1017,43 @@
       </tbody>
     </table>
 
-    <!-- Simple JS: show latest 8 news by default -->
+    <!-- JS: news toggle + conference summary pills -->
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const MAX_VISIBLE = 8;
         const list = document.getElementById('news-list');
         const toggleBtn = document.getElementById('news-toggle');
-        if (!list || !toggleBtn) return;
+        const venueSummary = document.getElementById('venue-summary');
+
+        if (!list) return;
 
         const items = Array.from(list.querySelectorAll('li'));
+
+        /* ----- build venue summary pills from data-venue + data-venue-count ----- */
+        if (venueSummary) {
+          const venueCounts = {};
+
+          items.forEach(li => {
+            const key = li.getAttribute('data-venue');
+            if (!key) return;
+            const count = parseInt(li.getAttribute('data-venue-count') || '1', 10);
+            if (!Number.isFinite(count)) return;
+            venueCounts[key] = (venueCounts[key] || 0) + count;
+          });
+
+          Object.entries(venueCounts)
+            .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+            .forEach(([venue, count]) => {
+              const pill = document.createElement('span');
+              pill.className = 'venue-count-pill';
+              pill.textContent = venue + '×' + count;
+              venueSummary.appendChild(pill);
+            });
+        }
+
+        /* ----- news show-more / show-less toggle ----- */
+        if (!toggleBtn) return;
+
         if (items.length <= MAX_VISIBLE) {
           toggleBtn.style.display = 'none';
           return;
