@@ -174,7 +174,7 @@
       }
       .news-list li {
         display: flex;
-        flex-wrap: nowrap;       /* keep date + text on one visual line */
+        flex-wrap: nowrap;
         align-items: flex-start;
         gap: 6px 10px;
         padding: 6px 0;
@@ -195,6 +195,29 @@
         font-size: 0.95rem;
       }
 
+      /* news toggle */
+      .news-hidden {
+        display: none;
+      }
+      .news-toggle-wrapper {
+        text-align: right;
+        margin-top: 4px;
+      }
+      .news-toggle-btn {
+        display: none; /* shown via JS only when needed */
+        margin-top: 8px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        border: 1px solid #e5e7eb;
+        background: #f9fafb;
+        font-size: 0.85rem;
+        cursor: pointer;
+        color: #4b5563;
+      }
+      .news-toggle-btn:hover {
+        background: #f3f4f6;
+      }
+
       /* --- Venue / conference highlights --- */
       .venue-pill {
         display: inline-flex;
@@ -211,25 +234,21 @@
         vertical-align: middle;
       }
       .venue-pill.conf {
-        /* conferences */
         background: #eff6ff;
         border-color: #bfdbfe;
         color: #1d4ed8;
       }
       .venue-pill.journal {
-        /* journals */
         background: #ecfdf3;
         border-color: #bbf7d0;
         color: #166534;
       }
       .venue-pill.workshop {
-        /* workshops / competitions */
         background: #fdf2f8;
         border-color: #f9a8d4;
         color: #9d174d;
       }
       .venue-pill.org {
-        /* societies / memberships */
         background: #f0fdf4;
         border-color: #bbf7d0;
         color: #15803d;
@@ -440,7 +459,7 @@
                 <tr>
                   <td style="padding:10px;width:100%;vertical-align:middle;">
                     <h2><u>News</u></h2>
-                    <ul class="news-list">
+                    <ul class="news-list" id="news-list">
                       <li>
                         <span class="news-date">[Nov. 2025]</span>
                         <span class="news-text">
@@ -684,6 +703,11 @@
                         </span>
                       </li>
                     </ul>
+                    <div class="news-toggle-wrapper">
+                      <button id="news-toggle" class="news-toggle-btn" type="button">
+                        Show all
+                      </button>
+                    </div>
                   </td>
                 </tr>
               </tbody>
@@ -961,5 +985,43 @@
         </tr>
       </tbody>
     </table>
+
+    <!-- Simple JS: show latest 8 news by default -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const MAX_VISIBLE = 8;
+        const list = document.getElementById('news-list');
+        const toggleBtn = document.getElementById('news-toggle');
+        if (!list || !toggleBtn) return;
+
+        const items = Array.from(list.querySelectorAll('li'));
+        if (items.length <= MAX_VISIBLE) {
+          toggleBtn.style.display = 'none';
+          return;
+        }
+
+        // hide older items
+        items.slice(MAX_VISIBLE).forEach(li => li.classList.add('news-hidden'));
+        toggleBtn.style.display = 'inline-flex';
+
+        let expanded = false;
+
+        const updateState = () => {
+          if (expanded) {
+            items.forEach(li => li.classList.remove('news-hidden'));
+            toggleBtn.textContent = 'Show less';
+          } else {
+            items.slice(MAX_VISIBLE).forEach(li => li.classList.add('news-hidden'));
+            toggleBtn.textContent = 'Show all';
+            list.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        };
+
+        toggleBtn.addEventListener('click', () => {
+          expanded = !expanded;
+          updateState();
+        });
+      });
+    </script>
   </body>
 </html>
