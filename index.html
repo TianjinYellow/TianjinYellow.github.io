@@ -197,7 +197,7 @@
 
       /* news toggle */
       .news-hidden {
-        display: none;
+        display: none !important;
       }
       .news-toggle-wrapper {
         text-align: right;
@@ -1006,11 +1006,11 @@
         const MAX_VISIBLE = 8;
         const list = document.getElementById('news-list');
         const toggleBtn = document.getElementById('news-toggle');
-        if (!list) return;
+        if (!list || !toggleBtn) return;
 
         const items = Array.from(list.querySelectorAll('li'));
 
-        /* ----- insert per-line count pill ----- */
+        /* ----- insert per-line count pill & remove the short venue-pill ----- */
         items.forEach(li => {
           const venue = li.getAttribute('data-venue');
           if (!venue) return;
@@ -1021,7 +1021,6 @@
           const textSpan = li.querySelector('.news-text');
           if (!textSpan) return;
 
-          // remove original short venue-pill (we'll replace it with the count pill)
           const oldPill = textSpan.querySelector('.venue-pill');
           if (oldPill) {
             const next = oldPill.nextSibling;
@@ -1039,33 +1038,35 @@
           textSpan.insertBefore(document.createTextNode(' '), pill.nextSibling);
         });
 
-        /* ----- news show-more / show-less toggle ----- */
-        if (!toggleBtn) return;
-
+        /* ----- show / hide by MAX_VISIBLE ----- */
         if (items.length <= MAX_VISIBLE) {
           toggleBtn.style.display = 'none';
           return;
         }
 
-        items.slice(MAX_VISIBLE).forEach(li => li.classList.add('news-hidden'));
-        toggleBtn.style.display = 'inline-flex';
+        let collapsed = true;
 
-        let expanded = false;
-
-        const updateState = () => {
-          if (expanded) {
-            items.forEach(li => li.classList.remove('news-hidden'));
-            toggleBtn.textContent = 'Show less';
-          } else {
-            items.slice(MAX_VISIBLE).forEach(li => li.classList.add('news-hidden'));
-            toggleBtn.textContent = 'Show all';
-            list.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
+        const applyState = () => {
+          items.forEach((li, idx) => {
+            if (collapsed && idx >= MAX_VISIBLE) {
+              li.classList.add('news-hidden');
+            } else {
+              li.classList.remove('news-hidden');
+            }
+          });
+          toggleBtn.textContent = collapsed ? 'Show all' : 'Show less';
         };
 
+        // initial: collapsed, only first MAX_VISIBLE shown
+        applyState();
+        toggleBtn.style.display = 'inline-flex';
+
         toggleBtn.addEventListener('click', () => {
-          expanded = !expanded;
-          updateState();
+          collapsed = !collapsed;
+          applyState();
+          if (collapsed) {
+            list.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         });
       });
     </script>
