@@ -174,7 +174,8 @@
       }
       .news-list li {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;       /* keep date + text on one visual line */
+        align-items: flex-start;
         gap: 6px 10px;
         padding: 6px 0;
         border-bottom: 1px dashed var(--border-subtle);
@@ -186,9 +187,11 @@
         font-weight: 600;
         color: #4b5563;
         min-width: 95px;
+        white-space: nowrap;
       }
       .news-text {
         flex: 1 1 auto;
+        min-width: 0;
         font-size: 0.95rem;
       }
 
@@ -208,7 +211,7 @@
         vertical-align: middle;
       }
       .venue-pill.conf {
-        /* top-tier conferences */
+        /* conferences */
         background: #eff6ff;
         border-color: #bfdbfe;
         color: #1d4ed8;
@@ -441,41 +444,37 @@
                       <li>
                         <span class="news-date">[Nov. 2025]</span>
                         <span class="news-text">
-                          One paper accepted at
-                          <span class="venue-pill conf">AAAI 2026</span>:
-                          <em
-                            >TimeCAP: A Channel-Aware Pre-Training Framework for Multivariate Time
-                            Series Forecasting</em
-                          >.
+                          <span class="venue-pill conf">AAAI 2026</span>
+                          &nbsp; One paper accepted:
+                          <em>TimeCAP: A Channel-Aware Pre-Training Framework for Multivariate Time
+                          Series Forecasting</em>.
                         </span>
                       </li>
 
                       <li>
                         <span class="news-date">[Oct. 2025]</span>
                         <span class="news-text">
-                          🔥 Happy to announce that I officially join the
-                          <span class="venue-pill org">ELLIS Society</span> as ELLIS Member. Thank you
-                          for my endorsers, collaborators, and students!
+                          <span class="venue-pill org">ELLIS Society</span>
+                          &nbsp; Joined as an ELLIS Member – grateful to my endorsers,
+                          collaborators, and students.
                         </span>
                       </li>
 
                       <li>
                         <span class="news-date">[Sep. 2025]</span>
                         <span class="news-text">
-                          One paper accepted at
-                          <span class="venue-pill conf">ACM WSDM 2025</span>:
-                          <em
-                            >SARC: Sentiment-Augmented Deep Role Clustering for Fake News
-                            Detection</em
-                          >.
+                          <span class="venue-pill conf">ACM WSDM 2025</span>
+                          &nbsp; One paper accepted:
+                          <em>SARC: Sentiment-Augmented Deep Role Clustering for Fake News
+                          Detection</em>.
                         </span>
                       </li>
 
                       <li>
                         <span class="news-date">[Sep. 2025]</span>
                         <span class="news-text">
-                          One paper accepted at
-                          <span class="venue-pill conf">NeurIPS 2025</span>:
+                          <span class="venue-pill conf">NeurIPS 2025</span>
+                          &nbsp; One paper accepted:
                           <a href="https://arxiv.org/abs/2505.16793">REOBench</a>.
                         </span>
                       </li>
@@ -483,10 +482,11 @@
                       <li>
                         <span class="news-date">[May. 2025]</span>
                         <span class="news-text">
-                          <span class="venue-pill conf">EUSIPCO 2025</span> paper:
-                          <a href="https://arxiv.org/abs/2504.12423"
-                            >Benchmarking Audio Deepfake Detection Robustness</a
-                          >
+                          <span class="venue-pill conf">EUSIPCO 2025</span>
+                          &nbsp; Paper accepted:
+                          <a href="https://arxiv.org/abs/2504.12423">
+                            Benchmarking Audio Deepfake Detection Robustness
+                          </a>
                           in real-world communication scenarios.
                         </span>
                       </li>
@@ -494,44 +494,45 @@
                       <li>
                         <span class="news-date">[May. 2025]</span>
                         <span class="news-text">
-                          We release <a href="https://arxiv.org/abs/2505.16793">REOBench</a>: A
-                          benchmark for evaluating the robustness of Earth observation foundation
-                          models.
+                          <strong>REOBench</strong>
+                          &nbsp; Released as a benchmark for evaluating the robustness of Earth
+                          observation foundation models
+                          (<a href="https://arxiv.org/abs/2505.16793">paper</a>).
                         </span>
                       </li>
 
                       <li>
                         <span class="news-date">[May. 2025]</span>
                         <span class="news-text">
-                          One <span class="venue-pill conf">MICCAI 2025</span> early accepted paper:
-                          LKA.
+                          <span class="venue-pill conf">MICCAI 2025</span>
+                          &nbsp; One early-accepted paper: LKA.
                         </span>
                       </li>
 
                       <li>
                         <span class="news-date">[May. 2025]</span>
                         <span class="news-text">
-                          One <span class="venue-pill conf">ICML 2025</span> paper accepted: LIFT.
+                          <span class="venue-pill conf">ICML 2025</span>
+                          &nbsp; One paper accepted: LIFT.
                         </span>
                       </li>
 
                       <li>
                         <span class="news-date">[Mar. 2025]</span>
                         <span class="news-text">
-                          One paper accepted by
-                          <span class="venue-pill journal">Expert Systems with Applications</span>:
+                          <span class="venue-pill journal">Expert Systems with Applications</span>
+                          &nbsp; One paper accepted:
                           <a
                             href="https://www.sciencedirect.com/science/article/pii/S095741742500822X"
-                            >Traffic congestion predictor</a
-                          >.
+                          >Traffic congestion predictor</a>.
                         </span>
                       </li>
 
                       <li>
                         <span class="news-date">[Mar. 2025]</span>
                         <span class="news-text">
-                          Two papers accepted at
-                          <span class="venue-pill workshop">ICLR 2025 SCOPE Workshop</span>:
+                          <span class="venue-pill workshop">ICLR 2025 SCOPE Workshop</span>
+                          &nbsp; Two papers accepted:
                           <a href="https://openreview.net/forum?id=P8RGSaUFOR">SPAM</a> and
                           <a href="https://openreview.net/forum?id=Gk2pBIAMUl">StableSPAM</a>.
                         </span>
@@ -540,31 +541,33 @@
                       <li>
                         <span class="news-date">[Jan. 2025]</span>
                         <span class="news-text">
-                          Three <span class="venue-pill conf">ICLR 2025</span> papers:
+                          <span class="venue-pill conf">ICLR 2025</span>
+                          &nbsp; Three papers accepted:
                           <a href="https://arxiv.org/abs/2501.06842">SPAM</a>,
                           <a href="https://arxiv.org/abs/2407.06483">Composable Interventions</a>,
                           and
-                          <a href="https://arxiv.org/pdf/2501.13273"
-                            >Robust Fairness via Confusional Spectral Regularization</a
-                          >.
+                          <a href="https://arxiv.org/pdf/2501.13273">
+                            Robust Fairness via Confusional Spectral Regularization
+                          </a>.
                         </span>
                       </li>
 
                       <li>
                         <span class="news-date">[Dec. 2024]</span>
                         <span class="news-text">
-                          Invited talk at
-                          <span class="venue-pill conf">SGAI 2024</span>,
-                          <a href="http://www.bcs-sgai.org/ai2024/?section=workshops"
-                            >University of Cambridge</a
-                          >.
+                          <span class="venue-pill conf">SGAI 2024</span>
+                          &nbsp; Gave an invited talk at the
+                          <a href="http://www.bcs-sgai.org/ai2024/?section=workshops">
+                            University of Cambridge
+                          </a>.
                         </span>
                       </li>
 
                       <li>
                         <span class="news-date">[Dec. 2024]</span>
                         <span class="news-text">
-                          One <span class="venue-pill conf">AAAI 2025</span> paper accepted:
+                          <span class="venue-pill conf">AAAI 2025</span>
+                          &nbsp; One paper accepted:
                           <em>Visual prompting upgrades neural network sparsification</em>.
                         </span>
                       </li>
@@ -572,7 +575,8 @@
                       <li>
                         <span class="news-date">[Jul. 2024]</span>
                         <span class="news-text">
-                          One <span class="venue-pill conf">BMVC 2024</span> paper accepted:
+                          <span class="venue-pill conf">BMVC 2024</span>
+                          &nbsp; One paper accepted:
                           <em>Are Sparse Neural Networks Better Hard Sample Learners?</em>
                         </span>
                       </li>
@@ -580,29 +584,30 @@
                       <li>
                         <span class="news-date">[Jun. 2024]</span>
                         <span class="news-text">
-                          Co-organizing
-                          <span class="venue-pill workshop">NeurIPS 2024 Competition</span>:
-                          <a
-                            href="https://edge-llms-challenge.github.io/edge-llm-challenge.github.io/"
-                            >Edge-Device LLM Challenge</a
-                          >.
+                          <span class="venue-pill workshop">NeurIPS 2024 Competition</span>
+                          &nbsp; Co-organizing the
+                          <a href="https://edge-llms-challenge.github.io/edge-llm-challenge.github.io/">
+                            Edge-Device LLM Challenge
+                          </a>.
                         </span>
                       </li>
 
                       <li>
                         <span class="news-date">[Mar. 2024]</span>
                         <span class="news-text">
-                          <span class="venue-pill workshop">ICLR 2024 Workshop</span> paper accepted:
-                          <a href="https://openreview.net/pdf?id=quK3DN5kUO"
-                            >Composing Knowledge and Compression Interventions</a
-                          >.
+                          <span class="venue-pill workshop">ICLR 2024 Workshop</span>
+                          &nbsp; Paper accepted:
+                          <a href="https://openreview.net/pdf?id=quK3DN5kUO">
+                            Composing Knowledge and Compression Interventions
+                          </a>.
                         </span>
                       </li>
 
                       <li>
                         <span class="news-date">[Oct. 2023]</span>
                         <span class="news-text">
-                          <span class="venue-pill journal">Information Fusion</span> paper accepted:
+                          <span class="venue-pill journal">Information Fusion</span>
+                          &nbsp; Paper accepted:
                           <em>Robust Spatiotemporal GCN</em>.
                         </span>
                       </li>
@@ -610,7 +615,8 @@
                       <li>
                         <span class="news-date">[Sep. 2023]</span>
                         <span class="news-text">
-                          <span class="venue-pill conf">Complex Networks 2024</span> paper accepted:
+                          <span class="venue-pill conf">Complex Networks 2024</span>
+                          &nbsp; Paper accepted:
                           <em>Heterophily-Based GNN for Imbalanced Classification</em>.
                         </span>
                       </li>
@@ -618,15 +624,17 @@
                       <li>
                         <span class="news-date">[Sep. 2023]</span>
                         <span class="news-text">
-                          <span class="venue-pill conf">NeurIPS 2023</span> paper accepted:
-                          <em>Channel-DST</em>.
+                          <span class="venue-pill conf">NeurIPS 2023</span>
+                          &nbsp; Paper accepted:
+                          <em>Dynamic sparsity is channel-level sparsity learner (Channel-DST)</em>.
                         </span>
                       </li>
 
                       <li>
                         <span class="news-date">[Jun. 2023]</span>
                         <span class="news-text">
-                          <span class="venue-pill conf">ECML 2023</span> paper accepted:
+                          <span class="venue-pill conf">ECML 2023</span>
+                          &nbsp; Paper accepted:
                           <em>Enhancing AT via Refining Optimization Trajectories</em>.
                         </span>
                       </li>
@@ -634,15 +642,17 @@
                       <li>
                         <span class="news-date">[Apr. 2023]</span>
                         <span class="news-text">
-                          <span class="venue-pill conf">ICML 2023</span> paper accepted:
-                          <em>Larger Kernel Better Teachers than Transformers</em>.
+                          <span class="venue-pill conf">ICML 2023</span>
+                          &nbsp; Paper accepted:
+                          <em>Are Large Kernels Better Teachers than Transformers for ConvNets?</em>
                         </span>
                       </li>
 
                       <li>
                         <span class="news-date">[Jan. 2023]</span>
                         <span class="news-text">
-                          <span class="venue-pill conf">ICLR 2023</span> Oral:
+                          <span class="venue-pill conf">ICLR 2023</span>
+                          &nbsp; Oral paper:
                           <em>Sparsity May Cry</em>.
                         </span>
                       </li>
@@ -650,7 +660,8 @@
                       <li>
                         <span class="news-date">[Nov. 2022]</span>
                         <span class="news-text">
-                          <span class="venue-pill conf">LoG 2022</span> Best Paper:
+                          <span class="venue-pill conf">LoG 2022</span>
+                          &nbsp; Best Paper Award:
                           <em>Better GNN by Finding Graph Tickets</em>.
                         </span>
                       </li>
@@ -658,7 +669,8 @@
                       <li>
                         <span class="news-date">[Nov. 2022]</span>
                         <span class="news-text">
-                          <span class="venue-pill conf">AAAI 2023</span> paper accepted:
+                          <span class="venue-pill conf">AAAI 2023</span>
+                          &nbsp; Paper accepted:
                           <em>Lottery Pools</em>.
                         </span>
                       </li>
@@ -666,7 +678,8 @@
                       <li>
                         <span class="news-date">[Jun. 2022]</span>
                         <span class="news-text">
-                          <span class="venue-pill conf">ECML-PKDD 2022</span> paper accepted:
+                          <span class="venue-pill conf">ECML-PKDD 2022</span>
+                          &nbsp; Paper accepted:
                           <em>Hop-count Based Self-Supervised Anomaly Detection</em>.
                         </span>
                       </li>
