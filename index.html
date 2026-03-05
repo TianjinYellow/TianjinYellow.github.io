@@ -126,6 +126,60 @@
         max-width: 22px;
       }
 
+      /* --- Biography & Research Cards --- */
+      .research-section {
+        padding: 10px 20px;
+      }
+      .research-intro {
+        font-size: 1rem;
+        color: #374151;
+        margin-bottom: 16px;
+      }
+      .research-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 20px;
+      }
+      .research-card {
+        background: #ffffff;
+        border: 1px solid var(--border-subtle);
+        border-left: 4px solid var(--accent);
+        border-radius: 8px;
+        padding: 16px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .research-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+      }
+      .research-card-title {
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: var(--text-main);
+        margin-top: 0;
+        margin-bottom: 6px;
+      }
+      .research-card-desc {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        margin-top: 0;
+        margin-bottom: 12px;
+        line-height: 1.6;
+      }
+      .research-card-papers {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .research-card-papers a {
+        text-decoration: none;
+      }
+      .research-card-papers .venue-pill {
+        margin: 0; 
+      }
+
       /* --- CSC/Joint Training callout --- */
       .cta-banner {
         max-width: 800px;
@@ -418,58 +472,73 @@
               </tbody>
             </table>
 
-            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
-              <tbody>
-                <tr>
-                  <td style="padding:10px 20px;width:100%;">
-                    <p>
-                    My research interests lie in developing reliable and generalizable Artificial Intelligence for real-world applications. While modern AI thrives on massive, pristine datasets, the real world is inherently messy. The ultimate goal of my research is to bridge the gap between idealized lab settings and the chaotic reality of deployment by building models that are robust to data imperfections.
+            <div class="research-section">
+              <h2><u>Biography & Research</u></h2>
+              <p class="research-intro">
+                My research interests lie in developing <strong>reliable and generalizable Artificial Intelligence</strong> for real-world applications. While modern AI thrives on massive, pristine datasets, the real world is inherently messy. The ultimate goal of my research is to bridge the gap between idealized lab settings and the chaotic reality of deployment by building models that are robust to data imperfections.
+              </p>
 
-                    </p>
+              <p class="research-intro">
+                My work centers on the reality that real-world data is often flawed. The central question driving my research is: <em>"How can we design efficient learning algorithms that do not just survive, but thrive, under imperfect conditions?"</em> I focus on addressing four fundamental challenges of real-world data: <strong>low quantity</strong>, <strong>low quality</strong>, and <strong>skewed distributions</strong>, all while maintaining <strong>learning efficiency in the era of Large Models</strong>.
+              </p>
 
-                    <p>
-                      My work centers on the reality that real-world data is often flawed. The central question driving my research is: <em>"How can we design efficient learning algorithms that do not just survive, but thrive, under imperfect conditions?"</em> I focus on addressing four fundamental challenges of real-world data: low quantity, low quality, and skewed distributions, all while maintaining <strong>learning efficiency in the era of Lage Models</strong>.
-                    </p>
+              <p class="research-intro">
+                My research helps realize these goals by making progress in the following four directions, specifically tailored for the era of Large Foundation Models:
+              </p>
 
-                    <p>
-                      My research helps realize these goals by making progress in the following four directions, specifically tailored for the era of Large Foundation Models:
-                    </p>
+              <div class="research-grid">
+                
+                <div class="research-card">
+                  <h3 class="research-card-title">Learning from Low-Quality Data</h3>
+                  <p class="research-card-desc">
+                    Developing robust frameworks to separate signal from noise when dealing with corrupted or unreliable data. This is crucial for preventing foundation models from memorizing noisy pre-training data or failing during downstream adaptation.
+                  </p>
+                  <div class="research-card-papers">
+                    <a href="https://openreview.net/forum?id=NfeA0waFaE" target="_blank" class="venue-pill conf">NeurIPS'25 (ReoBench)</a>
+                    <a href="https://arxiv.org/abs/2501.06842" target="_blank" class="venue-pill conf">ICLR'25 (SPAM)</a>
+                    <a href="https://doi.org/10.1016/j.inffus.2023.102078" target="_blank" class="venue-pill journal">Information Fusion (RT-GCN, IF=17.9)</a>
+                    <a href="https://doi.org/10.1016/j.commtr.2025.100192" target="_blank" class="venue-pill journal">CTR (SAFER-predictor, IF=14.5)</a>
+                  </div>
+                </div>
 
-                    <ul style="padding-left: 20px;">
-                      <li style="margin-bottom: 10px;">
-                          <strong>Learning from Low-Quality Data:</strong> Developing robust frameworks to separate signal from noise when dealing with corrupted or unreliable data. This is crucial for preventing foundation models from memorizing noisy pre-training data or failing during downstream adaptation. 
-                          ([<a href="https://openreview.net/forum?id=NfeA0waFaE" target="_blank">NeurIPS'25 (ReoBench)</a>], 
-                          [<a href="https://arxiv.org/abs/2501.06842" target="_blank">ICLR'25 (SPAM)</a>], 
-                          [<a href="https://doi.org/10.1016/j.inffus.2023.102078" target="_blank">Information Fusion (RT-GCN, IF=17.9)</a>], 
-                          [<a href="https://doi.org/10.1016/j.commtr.2025.100192" target="_blank">Communications in Transportation Research (SAFER-predictor, IF=14.5)</a>])
-                      </li>
-                      
-                      <li style="margin-bottom: 10px;">
-                          <strong>Excelling with Low-Quantity Data:</strong> Designing architectures and adaptation strategies that unlock the power of large foundation models in data-scarce, high-stakes domains like medical imaging, achieving high performance even when massive datasets are unavailable. 
-                          ([<a href="https://openreview.net/forum?id=Z6KGt1veeP" target="_blank">ICLR'26 (DKA)</a>], 
-                          [<a href="https://link.springer.com/chapter/10.1007/978-3-032-04978-0_38" target="_blank">MICCAI'25 (LKA)</a>])
-                      </li>
+                <div class="research-card">
+                  <h3 class="research-card-title">Excelling with Low-Quantity Data</h3>
+                  <p class="research-card-desc">
+                    Designing architectures and adaptation strategies that unlock the power of large foundation models in data-scarce, high-stakes domains like medical imaging, achieving high performance even when massive datasets are unavailable.
+                  </p>
+                  <div class="research-card-papers">
+                    <a href="https://openreview.net/forum?id=Z6KGt1veeP" target="_blank" class="venue-pill conf">ICLR'26 (DKA)</a>
+                    <a href="https://link.springer.com/chapter/10.1007/978-3-032-04978-0_38" target="_blank" class="venue-pill conf">MICCAI'25 (LKA)</a>
+                  </div>
+                </div>
 
-                      <li style="margin-bottom: 10px;">
-                          <strong>Addressing Skewed Distributions:</strong> Ensuring models generalize fairly and effectively across imbalanced and long-tailed data distributions, mitigating the representational biases that large models frequently absorb from real-world, uncurated data. 
-                          ([<a href="https://scholar.google.com/citations?user=yFLmPsoAAAAJ&hl=en" target="_blank">CVPR'26 (CAR)</a>],
-                        [<a href="https://arxiv.org/abs/2501.13273" target="_blank">ICLR'25 (Confusional Spectral Regularization)</a>])
-                      </li>
+                <div class="research-card">
+                  <h3 class="research-card-title">Addressing Skewed Distributions</h3>
+                  <p class="research-card-desc">
+                    Ensuring models generalize fairly and effectively across imbalanced and long-tailed data distributions, mitigating the representational biases that large models frequently absorb from real-world, uncurated data.
+                  </p>
+                  <div class="research-card-papers">
+                    <a href="https://scholar.google.com/citations?user=yFLmPsoAAAAJ&hl=en" target="_blank" class="venue-pill conf">CVPR'26 (CAR)</a>
+                    <a href="https://arxiv.org/abs/2501.13273" target="_blank" class="venue-pill conf">ICLR'25 (Confusional Spectral Reg)</a>
+                  </div>
+                </div>
 
-                      <li style="margin-bottom: 10px;">
-                          <strong>Advancing Efficient Learning:</strong> Improving fundamental model efficiency, knowledge distillation, and architecture design. My goal is to compress the capabilities of large foundation models into efficient forms, making their training and real-world deployment practical and sustainable. 
-                          ([<a href="https://openreview.net/forum?id=XHHIZNgrho" target="_blank">ICML'25 (LIFT)</a>], 
-                          [<a href="https://proceedings.mlr.press/v202/huang23f.html" target="_blank">ICML'24 (Large kernel better distillation)</a>],
-                        [<a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/d6d0e41e0b1ed38c76d13c9e417a8f1f-Abstract-Conference.html" target="_blank">NeurIPS'23 (Dynamic sparsity)</a>],
-                        [<a href="https://arxiv.org/abs/2303.02141" target="_blank">ICLR'23 (SMC)</a>],
-                      [<a href="https://ojs.aaai.org/index.php/AAAI/article/view/32431" target="_blank">AAAI'25 (Visual prompting upgrades sparsification)</a>])
-                        
-                      </li>
-                    </ul>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                <div class="research-card">
+                  <h3 class="research-card-title">Advancing Efficient Learning</h3>
+                  <p class="research-card-desc">
+                    Improving fundamental model efficiency, knowledge distillation, and architecture design. My goal is to compress the capabilities of large foundation models into efficient forms, making their training and real-world deployment practical and sustainable.
+                  </p>
+                  <div class="research-card-papers">
+                    <a href="https://openreview.net/forum?id=XHHIZNgrho" target="_blank" class="venue-pill conf">ICML'25 (LIFT)</a>
+                    <a href="https://proceedings.mlr.press/v202/huang23f.html" target="_blank" class="venue-pill conf">ICML'24 (Large kernel distillation)</a>
+                    <a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/d6d0e41e0b1ed38c76d13c9e417a8f1f-Abstract-Conference.html" target="_blank" class="venue-pill conf">NeurIPS'23 (Dynamic sparsity)</a>
+                    <a href="https://arxiv.org/abs/2303.02141" target="_blank" class="venue-pill conf">ICLR'23 (SMC)</a>
+                    <a href="https://ojs.aaai.org/index.php/AAAI/article/view/32431" target="_blank" class="venue-pill conf">AAAI'25 (Visual prompting)</a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
             <div class="cta-banner" id="csc-phd">
               <h3>
                 Call for <span class="badge">CSC PhD</span> &amp;
@@ -1104,7 +1173,6 @@
 
         const items = Array.from(list.querySelectorAll('li'));
 
-        /* ----- insert per-line count pill & remove the short venue-pill ----- */
         items.forEach(li => {
           const venue = li.getAttribute('data-venue');
           if (!venue) return;
@@ -1132,7 +1200,6 @@
           textSpan.insertBefore(document.createTextNode(' '), pill.nextSibling);
         });
 
-        /* ----- show / hide by MAX_VISIBLE ----- */
         if (items.length <= MAX_VISIBLE) {
           toggleBtn.style.display = 'none';
           return;
@@ -1151,7 +1218,6 @@
           toggleBtn.textContent = collapsed ? 'Show all' : 'Show less';
         };
 
-        // initial: collapsed, only first MAX_VISIBLE shown
         applyState();
         toggleBtn.style.display = 'inline-flex';
 
