@@ -3,7 +3,7 @@ window.REGAL_LAB_DATA = {
   name: "REGAL-Lab",
   fullName: "Reliable and Generalizable AI Lab",
   summary:
-    "REGAL-Lab is led by Tianjin Huang at the University of Exeter. We work on reliable and generalizable AI systems for real-world, imperfect, and high-stakes data.",
+    "REGAL Lab develops reliable, generalizable, and efficient AI systems.",
   focusAreas: [
     "Reliable Foundation Models",
     "Generalizable AI",
@@ -23,6 +23,7 @@ window.REGAL_LAB_DATA = {
         { name: "Bingrong Liu", role: "PhD Student" },
         { name: "Hongyun Wang", role: "PhD Student" },
         { name: "Jianhua Dong", role: "PhD Student" },
+        { name: "Xinyu Li", role: "PhD Student" },
       ],
     },
     {
