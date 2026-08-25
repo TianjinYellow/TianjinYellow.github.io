@@ -1,11 +1,12 @@
-// Update this file to change REAL-Lab members, focus areas, and opportunities.
-window.REAL_LAB_DATA = {
-  name: "REAL-Lab",
-  fullName: "Reliable and Efficient AI Lab",
+// Update this file to change REGAL-Lab members, focus areas, and opportunities.
+window.REGAL_LAB_DATA = {
+  name: "REGAL-Lab",
+  fullName: "Reliable and Generalizable AI Lab",
   summary:
-    "REAL-Lab is led by Tianjin Huang at the University of Exeter. We work on reliable and efficient AI systems for real-world, imperfect, and high-stakes data.",
+    "REGAL-Lab is led by Tianjin Huang at the University of Exeter. We work on reliable and generalizable AI systems for real-world, imperfect, and high-stakes data.",
   focusAreas: [
     "Reliable Foundation Models",
+    "Generalizable AI",
     "Efficient Learning",
     "Agentic AI",
     "AI for Science",

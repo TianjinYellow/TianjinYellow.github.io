@@ -1,5 +1,5 @@
 (function () {
-  const data = window.REAL_LAB_DATA;
+  const data = window.REGAL_LAB_DATA;
   if (!data) return;
 
   const summary = document.getElementById("lab-summary");
