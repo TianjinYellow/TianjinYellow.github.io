@@ -2,38 +2,37 @@ window.homepageData = {
   research: [
     {
       number: "01",
-      title: "Learning from Low-Quality Data",
-      text: "Robust training and adaptation methods that separate signal from noise when labels, pre-training corpora, or downstream data are corrupted or unreliable.",
+      title: "Reliable Foundation Model Learning",
+      text: "Understanding and improving the stability, robustness, and generalization of foundation model learning under imperfect optimization, limited supervision, distribution shifts, and resource constraints.",
       links: [
-        { label: "NeurIPS 2025: REOBench", href: "https://openreview.net/forum?id=NfeA0waFaE" },
+        { label: "ICML 2026: GradientStabilizer", href: "https://arxiv.org/abs/2502.17055" },
         { label: "ICLR 2025: SPAM", href: "https://arxiv.org/abs/2501.06842" },
-        { label: "Information Fusion: RT-GCN", href: "https://doi.org/10.1016/j.inffus.2023.102078" },
+        { label: "NeurIPS 2025: REOBench", href: "https://openreview.net/forum?id=NfeA0waFaE" },
       ],
     },
     {
       number: "02",
-      title: "Excelling with Low-Quantity Data",
-      text: "Adapters and architectures that unlock large models in data-scarce domains such as medical image analysis, where collecting massive datasets is often impossible.",
+      title: "Predictive World Models",
+      text: "Learning robust predictive representations and latent dynamics for imagination, planning, and decision-making, with a focus on predictive invariance and reliable long-horizon reasoning.",
       links: [
-        { label: "ICLR 2026: DKA", href: "https://openreview.net/forum?id=Z6KGt1veeP" },
-        { label: "MICCAI 2025: LKA", href: "https://link.springer.com/chapter/10.1007/978-3-032-04978-0_38" },
-        { label: "MedFM-Robust", href: "https://arxiv.org/abs/2605.19027" },
+        { label: "Expert Systems: Traffic Predictor", href: "https://www.sciencedirect.com/science/article/pii/S095741742500822X" },
+        { label: "Information Fusion: RT-GCN", href: "https://doi.org/10.1016/j.inffus.2023.102078" },
       ],
     },
     {
       number: "03",
-      title: "Addressing Skewed Distributions",
-      text: "Generalization and fairness methods for imbalanced, long-tailed, and shifting data distributions that foundation models frequently inherit from the real world.",
+      title: "Reliable Reasoning & Agentic AI",
+      text: "Developing foundation models and autonomous agents that reason, plan, verify, and act reliably under uncertainty.",
       links: [
-        { label: "CVPR 2026 Oral: CAR", href: "https://arxiv.org/abs/2603.16732" },
-        { label: "ICLR 2025: CSR", href: "https://arxiv.org/abs/2501.13273" },
-        { label: "REOBench", href: "https://arxiv.org/abs/2505.16793" },
+        { label: "ICML 2026: Reliable LLM Judgement", href: "https://arxiv.org/abs/2605.15416" },
+        { label: "EMNLP 2026: LLM Regret", href: "https://arxiv.org/abs/2506.15617" },
+        { label: "ICLR 2025: Composable Interventions", href: "https://arxiv.org/abs/2407.06483" },
       ],
     },
     {
       number: "04",
-      title: "Advancing Efficient Learning",
-      text: "Compression, sparsity, distillation, and efficient optimization techniques that make large-model training and real-world deployment more practical and sustainable.",
+      title: "Efficient & Adaptive Intelligence",
+      text: "Designing optimization methods and architectures that dynamically allocate, reuse, and reduce computation for efficient learning and reasoning.",
       links: [
         { label: "ICML 2025: LIFT", href: "https://openreview.net/forum?id=XHHIZNgrho" },
         { label: "ICML 2023: Large Kernels", href: "https://proceedings.mlr.press/v202/huang23f.html" },
