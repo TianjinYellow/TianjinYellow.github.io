@@ -42,6 +42,12 @@ window.homepageData = {
   ],
   newsInitialCount: 10,
   news: [
+        {
+      date: "Sep. 2026",
+      datetime: "2026-09",
+      kind: "Service",
+      html: "<strong>ICLR 2027.</strong> I serve as Area Chair of ICLR 2026.",
+    },
     {
       date: "Aug. 2026",
       datetime: "2026-08",
