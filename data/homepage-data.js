@@ -42,6 +42,12 @@ window.homepageData = {
   ],
   newsInitialCount: 10,
   news: [
+      {
+      date: "Sep. 2026",
+      datetime: "2026-09",
+      kind: "Paper",
+      html: '<strong>NeurIPS.</strong> One paper was accepted by NeurIPS 2026.',
+    },
         {
       date: "Sep. 2026",
       datetime: "2026-09",
