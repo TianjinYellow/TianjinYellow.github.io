@@ -40,6 +40,7 @@ window.REGAL_LAB_DATA = {
         { name: "Siyuan Lu", role: "Research Intern" },
         { name: "LingFeng", role: "Research Intern" },
         { name: "Zhaorui Jiang", role: "Research Intern" },
+        { name: "Hasaan Ahmad", role: "Research Intern" },
       ],
     },
   ],
