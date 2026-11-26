@@ -43,6 +43,12 @@ window.homepageData = {
   newsInitialCount: 10,
   news: [
     {
+      date: "Nov. 2026",
+      datetime: "2026-11",
+      kind: "Service",
+      html: "<strong>ICML 2027.</strong> I serve as Area Chair of ICML 2027.",
+    },
+    {
       date: "Sep. 2026",
       datetime: "2026-09",
       kind: "Paper",
