@@ -45,6 +45,12 @@ window.homepageData = {
     {
       date: "Nov. 2026",
       datetime: "2026-11",
+      kind: "Support",
+      html: "<strong>OpenAI.</strong> Received support from OpenAI.",
+    },
+    {
+      date: "Nov. 2026",
+      datetime: "2026-11",
       kind: "Service",
       html: "<strong>ICML 2027.</strong> I serve as Area Chair of ICML 2027.",
     },
