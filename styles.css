@@ -58,6 +58,7 @@ body {
 
 .home-page,
 .lab-page {
+  isolation: isolate;
   background: linear-gradient(rgba(247, 248, 245, 0.92), rgba(247, 248, 245, 0.92)),
     url("assets/rain-background.jpg") center / cover fixed;
 }
@@ -68,39 +69,13 @@ body {
     url("assets/rain-background.jpg") center / cover fixed;
 }
 
-.lab-page {
-  isolation: isolate;
-  --rain-streak: rgba(66, 112, 108, 0.3);
-}
-
-[data-theme="dark"] .lab-page {
-  --rain-streak: rgba(191, 224, 220, 0.22);
-}
-
-.lab-page::before {
-  content: "";
+.rain-layer {
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background-image:
-    radial-gradient(ellipse 1px 11px at 24px 22px, var(--rain-streak), transparent),
-    radial-gradient(ellipse 1px 8px at 89px 91px, var(--rain-streak), transparent),
-    radial-gradient(ellipse 1px 14px at 153px 62px, var(--rain-streak), transparent);
-  background-size: 120px 160px, 180px 160px, 240px 160px;
-  animation: rain-fall 3s linear infinite;
-}
-
-@keyframes rain-fall {
-  to {
-    background-position: 0 320px, 0 320px, 0 320px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .lab-page::before {
-    animation: none;
-  }
+  width: 100%;
+  height: 100%;
 }
 
 a {
