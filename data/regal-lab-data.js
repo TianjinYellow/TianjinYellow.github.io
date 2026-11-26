@@ -1,9 +1,9 @@
-// Update this file to change REGAL-Lab members, focus areas, and opportunities.
+// Update this file to change RAIN members, focus areas, and opportunities.
 window.REGAL_LAB_DATA = {
-  name: "REGAL-Lab",
-  fullName: "Reliable and Generalizable AI Lab",
+  name: "RAIN",
+  fullName: "Reliable and Adaptive Intelligence",
   summary:
-    "REGAL Lab develops reliable, generalizable, and efficient AI systems.",
+    "RAIN develops reliable and adaptive intelligence.",
   focusAreas: [
     "Reliable Foundation Models",
     "Generalizable AI",
