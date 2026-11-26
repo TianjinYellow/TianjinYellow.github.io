@@ -3,6 +3,8 @@
   const toggle = document.getElementById("theme-toggle");
   const progress = document.getElementById("scroll-progress-bar");
   const year = document.getElementById("year");
+  const music = document.getElementById("background-music");
+  const musicToggle = document.getElementById("music-toggle");
 
   const storedTheme = window.localStorage.getItem("theme");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -37,6 +39,32 @@
       const current = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
       applyTheme(current === "dark" ? "light" : "dark");
     });
+  }
+
+  if (music && musicToggle) {
+    const updateMusicControl = function () {
+      const playing = !music.paused;
+      const label = (playing ? "Pause" : "Play") + " Kiss the Rain by Yiruma";
+      musicToggle.setAttribute("aria-pressed", String(playing));
+      musicToggle.setAttribute("aria-label", label);
+      musicToggle.title = label;
+      musicToggle.querySelector("span").textContent = playing ? "\u23f8" : "\u266b";
+    };
+
+    musicToggle.addEventListener("click", async function () {
+      if (music.paused) {
+        try {
+          await music.play();
+        } catch (error) {
+          musicToggle.setAttribute("aria-label", "Unable to play Kiss the Rain");
+          musicToggle.title = "Unable to play Kiss the Rain";
+        }
+      } else {
+        music.pause();
+      }
+    });
+    music.addEventListener("play", updateMusicControl);
+    music.addEventListener("pause", updateMusicControl);
   }
 
   window.addEventListener("scroll", updateProgress, { passive: true });

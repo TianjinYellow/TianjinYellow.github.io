@@ -21,9 +21,15 @@
           <a href="#news">News</a>
           <a href="#publications">Publications</a>
         </div>
-        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme">
-          <span aria-hidden="true"></span>
-        </button>
+        <div class="nav-actions">
+          <button class="music-toggle" id="music-toggle" type="button" aria-label="Play Kiss the Rain by Yiruma" aria-pressed="false" title="Play Kiss the Rain by Yiruma">
+            <span aria-hidden="true">&#9835;</span>
+          </button>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme">
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+        <audio id="background-music" src="assets/kiss-the-rain.mp3" preload="none" loop></audio>
       </nav>
       <div class="scroll-progress" aria-hidden="true">
         <span id="scroll-progress-bar"></span>
