@@ -42,6 +42,19 @@
   }
 
   if (music && musicToggle) {
+    const stopAutoplayRetry = function () {
+      document.removeEventListener("pointerdown", retryAutoplay);
+      document.removeEventListener("keydown", retryAutoplay);
+    };
+
+    const retryAutoplay = function (event) {
+      if (musicToggle.contains(event.target)) {
+        stopAutoplayRetry();
+        return;
+      }
+      if (music.paused) music.play().catch(function () {});
+    };
+
     const updateMusicControl = function () {
       const playing = !music.paused;
       const label = (playing ? "Pause" : "Play") + " Kiss the Rain by Yiruma";
@@ -64,7 +77,11 @@
       }
     });
     music.addEventListener("play", updateMusicControl);
+    music.addEventListener("play", stopAutoplayRetry);
     music.addEventListener("pause", updateMusicControl);
+    document.addEventListener("pointerdown", retryAutoplay);
+    document.addEventListener("keydown", retryAutoplay);
+    music.play().catch(function () {});
   }
 
   window.addEventListener("scroll", updateProgress, { passive: true });
