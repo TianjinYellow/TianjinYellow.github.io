@@ -56,6 +56,16 @@ body {
   letter-spacing: 0;
 }
 
+.home-page {
+  background: linear-gradient(rgba(247, 248, 245, 0.92), rgba(247, 248, 245, 0.92)),
+    url("assets/rain-background.jpg") center / cover fixed;
+}
+
+[data-theme="dark"] .home-page {
+  background: linear-gradient(rgba(17, 21, 22, 0.91), rgba(17, 21, 22, 0.91)),
+    url("assets/rain-background.jpg") center / cover fixed;
+}
+
 a {
   color: var(--accent-blue);
   text-decoration: none;
